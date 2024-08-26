@@ -49,4 +49,8 @@ enum Cards: Int, CaseIterable {
             Image(.truck)
         }
     }
+    
+    var defaultImage: Image {
+        Image(.brain)
+    }
 }

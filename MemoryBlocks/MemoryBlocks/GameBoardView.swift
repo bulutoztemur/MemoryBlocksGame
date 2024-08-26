@@ -25,7 +25,7 @@ struct GameBoardView: View {
                             .resizable()
                             .frame(width: geometry.size.width * 0.2, height: geometry.size.width * 0.2)
                             .background(.clear)
-                            .padding()                        
+                            .padding()
                     }
                 }
             }
