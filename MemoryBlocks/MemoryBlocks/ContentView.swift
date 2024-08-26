@@ -13,7 +13,7 @@ import SwiftUI
 
 struct ContentView: View {
     // Define a simple array of data
-    let items = ["2x2", "2x3", "2x4", "4x6"]
+    let items = GameBoardSize.allCases
     
     // Define the grid layout with 2 columns
     let columns: [GridItem] = [
@@ -23,22 +23,26 @@ struct ContentView: View {
     
     var body: some View {
         // Use a LazyVGrid to arrange items in a grid
-        GeometryReader { geometry in
-            LazyVGrid(columns: columns, spacing: 20) {
-                        ForEach(items, id: \.self) { item in
-                            Button {
-                                // Perform action here
-                            } label: {
-                                Text("\(item)")
-                                    .frame(width: geometry.size.width * 0.4, height: geometry.size.width * 0.4)
-                                    .background(Color.blue)
-                                    .foregroundColor(.black)
-                            }
-                            
+        NavigationStack {
+            GeometryReader { geometry in
+                LazyVGrid(columns: columns, spacing: 20) {
+                    ForEach(items, id: \.self) { item in
+                        NavigationLink(value: item) {
+                            Text("\(item.displayName)")
+                                .frame(width: geometry.size.width * 0.45, height: geometry.size.width * 0.45)
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .font(.title)
                         }
+                    }
+                }
+                .navigationDestination(for: GameBoardSize.self) { item in
+                    GameBoardView(gameBoard: item)
+                }
             }
             .padding()
         }
     }
 }
+
 
