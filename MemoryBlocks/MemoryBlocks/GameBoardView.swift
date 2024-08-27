@@ -14,25 +14,25 @@ struct GameBoardView: View {
         [GridItem](repeating: GridItem(.flexible()), count: gameBoard.column)
     }
     
-    let cards = Cards.allCases
+    @State private var viewModel: ViewModel
+    
+    init(gameBoard: GameBoardSize) {
+        self.gameBoard = gameBoard
+        self.viewModel = ViewModel(gameBoardSize: gameBoard)
+    }
     
     var body: some View {
         GeometryReader { geometry in
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(cards, id: \.self) { card in
-                        card.image
-                            .resizable()
-                            .frame(width: geometry.size.width * 0.2, height: geometry.size.width * 0.2)
-                            .background(.clear)
-                            .padding()
+                    ForEach(viewModel.cardItems, id: \.self) { cardItem in
+                        CardView(card: cardItem.card)
+                            .frame(width: geometry.size.width * 0.40, height: geometry.size.width * 0.40)
                     }
                 }
+                .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
             }
-            
         }
-        .padding()
-
     }
 }
 

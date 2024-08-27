@@ -7,8 +7,13 @@
 
 import SwiftUI
 
-enum Cards: Int, CaseIterable {
-    case bicycle = 1
+struct CardItem: Identifiable, Hashable {
+    var id: UUID = UUID()
+    var card: Card
+}
+
+enum Card: Int, CaseIterable {
+    case bicycle = 0
     case bus
     case car
     case helicopter
