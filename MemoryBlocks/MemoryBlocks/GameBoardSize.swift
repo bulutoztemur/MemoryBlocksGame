@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum GameBoardSize: CaseIterable {
+enum GameBoard: CaseIterable {
     case twotwo
     case threetwo
     case fourtwo

@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct CardView: View {
-    var card: Card
-    @State var opened = false
+    @ObservedObject var cardItem: CardItem
     
     var body: some View {
-        let image: Image = opened ? card.image : card.defaultImage
+        let image: Image = cardItem.open ? cardItem.card.image : cardItem.card.defaultImage
         image
             .resizable()
             .padding(8)
@@ -20,12 +19,9 @@ struct CardView: View {
                     RoundedRectangle(cornerRadius: 16)
                         .stroke(.blue, lineWidth: 4)
                 )
-            .onTapGesture {
-               opened = true
-            }
     }
 }
 
 #Preview {
-    CardView(card: .bicycle)
+    CardView(cardItem: CardItem(card: .bicycle))
 }

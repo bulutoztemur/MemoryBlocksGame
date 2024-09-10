@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		59742A402C7C805500F93E3A /* GameBoardSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59742A3F2C7C805500F93E3A /* GameBoardSize.swift */; };
-		59742A422C7C98A900F93E3A /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59742A412C7C98A900F93E3A /* Cards.swift */; };
+		59742A422C7C98A900F93E3A /* CardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59742A412C7C98A900F93E3A /* CardItem.swift */; };
 		59742A442C7CABDD00F93E3A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59742A432C7CABDD00F93E3A /* CardView.swift */; };
 		59742A462C7CC4BA00F93E3A /* GameBoardView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59742A452C7CC4BA00F93E3A /* GameBoardView+ViewModel.swift */; };
 		5992E0BD2C76052D00A5EE3A /* MemoryBlocksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992E0BC2C76052D00A5EE3A /* MemoryBlocksApp.swift */; };
@@ -20,7 +20,7 @@
 
 /* Begin PBXFileReference section */
 		59742A3F2C7C805500F93E3A /* GameBoardSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardSize.swift; sourceTree = "<group>"; };
-		59742A412C7C98A900F93E3A /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		59742A412C7C98A900F93E3A /* CardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItem.swift; sourceTree = "<group>"; };
 		59742A432C7CABDD00F93E3A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		59742A452C7CC4BA00F93E3A /* GameBoardView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameBoardView+ViewModel.swift"; sourceTree = "<group>"; };
 		5992E0B92C76052D00A5EE3A /* MemoryBlocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryBlocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,7 +68,7 @@
 				5992E0C22C76052E00A5EE3A /* Preview Content */,
 				5992E0CA2C761E8A00A5EE3A /* GameBoardView.swift */,
 				59742A3F2C7C805500F93E3A /* GameBoardSize.swift */,
-				59742A412C7C98A900F93E3A /* Cards.swift */,
+				59742A412C7C98A900F93E3A /* CardItem.swift */,
 				59742A432C7CABDD00F93E3A /* CardView.swift */,
 			);
 			path = MemoryBlocks;
@@ -152,7 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59742A422C7C98A900F93E3A /* Cards.swift in Sources */,
+				59742A422C7C98A900F93E3A /* CardItem.swift in Sources */,
 				5992E0BF2C76052D00A5EE3A /* ContentView.swift in Sources */,
 				59742A462C7CC4BA00F93E3A /* GameBoardView+ViewModel.swift in Sources */,
 				5992E0BD2C76052D00A5EE3A /* MemoryBlocksApp.swift in Sources */,

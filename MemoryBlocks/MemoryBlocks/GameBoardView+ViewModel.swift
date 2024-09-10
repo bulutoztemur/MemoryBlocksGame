@@ -10,13 +10,13 @@ import Foundation
 extension GameBoardView {
     @Observable
     class ViewModel {
-        var gameBoardSize: GameBoardSize
+        var gameBoard: GameBoard
         var cardItems: [CardItem] = []
         
-        init(gameBoardSize: GameBoardSize) {
-            self.gameBoardSize = gameBoardSize
+        init(gameBoard: GameBoard) {
+            self.gameBoard = gameBoard
             
-            for i in 0..<(gameBoardSize.column * gameBoardSize.row / 2) {
+            for i in 0..<(gameBoard.column * gameBoard.row / 2) {
                 cardItems.append(CardItem(card: Card(rawValue: i) ?? Card.bicycle))
                 cardItems.append(CardItem(card: Card(rawValue: i) ?? Card.bicycle))
             }

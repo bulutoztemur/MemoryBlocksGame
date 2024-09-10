@@ -13,7 +13,7 @@ import SwiftUI
 
 struct ContentView: View {
     // Define a simple array of data
-    let items = GameBoardSize.allCases
+    let items = GameBoard.allCases
     
     // Define the grid layout with 2 columns
     let columns: [GridItem] = [
@@ -36,7 +36,7 @@ struct ContentView: View {
                         }
                     }
                 }
-                .navigationDestination(for: GameBoardSize.self) { item in
+                .navigationDestination(for: GameBoard.self) { item in
                     GameBoardView(gameBoard: item)
                 }
             }

@@ -1,5 +1,5 @@
 //
-//  Cards.swift
+//  CardItem.swift
 //  MemoryBlocks
 //
 //  Created by bulut.oztemur on 26.08.24.
@@ -7,9 +7,22 @@
 
 import SwiftUI
 
-struct CardItem: Identifiable, Hashable {
+class CardItem: Identifiable, Hashable, ObservableObject {
+    init(card: Card) {
+        self.card = card
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static func == (lhs: CardItem, rhs: CardItem) -> Bool {
+        rhs.id == lhs.id
+    }
+    
     var id: UUID = UUID()
     var card: Card
+    @Published var open: Bool = false
 }
 
 enum Card: Int, CaseIterable {
