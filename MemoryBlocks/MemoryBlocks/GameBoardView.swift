@@ -17,10 +17,16 @@ struct GameBoardView: View {
     @State private var firstCardOpened = false
     @State private var secondCardOpened = false
     
+    @State private var firstCardIndex: Int = 0
+    @State private var secondCardIndex: Int = 0
+    
     @State private var viewModel: ViewModel
     
     private var cardViews: [CardView] = []
     
+    @State private var firstCard: CardItem?
+    @State private var secondCard: CardItem?
+        
     var index: Int?
     
     init(gameBoard: GameBoard) {
@@ -35,18 +41,47 @@ struct GameBoardView: View {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(0..<cardViews.count, id: \.self) { index in
                         cardViews[index]
-                            .frame(width: geometry.size.width * 0.40, height: geometry.size.width * 0.40)
+                            .frame(width: gameBoard.cardSize, height: gameBoard.cardSize)
                             .onTapGesture {
-                                cardViews[index].cardItem.open = true
+                                if !firstCardOpened {
+                                    firstCardOpened = true
+                                    cardViews[index].cardItem.open = true
+                                    firstCard = cardViews[index].cardItem
+                                    firstCardIndex = index
+                                } else if !secondCardOpened {
+                                    secondCardOpened = true
+                                    cardViews[index].cardItem.open = true
+                                    secondCard = cardViews[index].cardItem
+                                    secondCardIndex = index
+                                }
+                                
+                                if let firstCard, let secondCard {
+                                    if firstCard.card.rawValue == secondCard.card.rawValue {
+                                        firstCardOpened = false
+                                        secondCardOpened = false
+                                        self.firstCard = nil
+                                        self.secondCard = nil
+                                    } else {
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                            firstCardOpened = false
+                                            secondCardOpened = false
+                                            firstCard.open = false
+                                            secondCard.open = false
+                                            self.firstCard = nil
+                                            self.secondCard = nil
+                                        }
+                                    }
+                                }
                             }
-                    }                    
+                    }
                 }
                 .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+                .allowsHitTesting(!secondCardOpened)
             }
         }
     }
 }
 
 #Preview {
-    GameBoardView(gameBoard: .fourtwo)
+    GameBoardView(gameBoard: .sixfour)
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		592BBCF22C919E0500E759C9 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592BBCF12C919E0500E759C9 /* TestView.swift */; };
 		59742A402C7C805500F93E3A /* GameBoardSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59742A3F2C7C805500F93E3A /* GameBoardSize.swift */; };
 		59742A422C7C98A900F93E3A /* CardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59742A412C7C98A900F93E3A /* CardItem.swift */; };
 		59742A442C7CABDD00F93E3A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59742A432C7CABDD00F93E3A /* CardView.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		592BBCF12C919E0500E759C9 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		59742A3F2C7C805500F93E3A /* GameBoardSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardSize.swift; sourceTree = "<group>"; };
 		59742A412C7C98A900F93E3A /* CardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItem.swift; sourceTree = "<group>"; };
 		59742A432C7CABDD00F93E3A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 		5992E0B02C76052D00A5EE3A = {
 			isa = PBXGroup;
 			children = (
+				592BBCF12C919E0500E759C9 /* TestView.swift */,
 				5992E0BB2C76052D00A5EE3A /* MemoryBlocks */,
 				5992E0BA2C76052D00A5EE3A /* Products */,
 			);
@@ -156,6 +159,7 @@
 				5992E0BF2C76052D00A5EE3A /* ContentView.swift in Sources */,
 				59742A462C7CC4BA00F93E3A /* GameBoardView+ViewModel.swift in Sources */,
 				5992E0BD2C76052D00A5EE3A /* MemoryBlocksApp.swift in Sources */,
+				592BBCF22C919E0500E759C9 /* TestView.swift in Sources */,
 				5992E0CB2C761E8A00A5EE3A /* GameBoardView.swift in Sources */,
 				59742A442C7CABDD00F93E3A /* CardView.swift in Sources */,
 				59742A402C7C805500F93E3A /* GameBoardSize.swift in Sources */,

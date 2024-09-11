@@ -9,16 +9,30 @@ import SwiftUI
 
 struct CardView: View {
     @ObservedObject var cardItem: CardItem
-    
+
     var body: some View {
-        let image: Image = cardItem.open ? cardItem.card.image : cardItem.card.defaultImage
-        image
-            .resizable()
-            .padding(8)
-            .overlay(
-                    RoundedRectangle(cornerRadius: 16)
-                        .stroke(.blue, lineWidth: 4)
-                )
+        ZStack {
+            if !cardItem.open {
+                cardItem.card.defaultImage
+                    .resizable()
+                    .padding(8)
+                    .overlay(
+                            RoundedRectangle(cornerRadius: 16)
+                                .stroke(.blue, lineWidth: 4)
+                        )
+            }
+            
+            if cardItem.open {
+                cardItem.card.image
+                    .resizable()
+                    .padding(8)
+                    .overlay(
+                            RoundedRectangle(cornerRadius: 16)
+                                .stroke(.blue, lineWidth: 4)
+                        )
+            }
+        }
+        .allowsHitTesting(!cardItem.open)
     }
 }
 

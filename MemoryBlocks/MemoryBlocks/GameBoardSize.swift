@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum GameBoard: CaseIterable {
     case twotwo
@@ -37,6 +38,10 @@ enum GameBoard: CaseIterable {
         case .sixfour:
             4
         }
+    }
+    
+    var cardSize: CGFloat {
+        (UIScreen.main.bounds.width / CGFloat(column)) - 20.0
     }
     
     var displayName: String {
