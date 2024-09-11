@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CardView: View {
     @ObservedObject var cardItem: CardItem
+    
+    @State var rotationAngle: Double = 0.0
 
     var body: some View {
         ZStack {
@@ -32,6 +34,16 @@ struct CardView: View {
                         )
             }
         }
+        .simultaneousGesture(TapGesture().onEnded {
+            withAnimation(.easeInOut(duration: 0.5)) {
+                cardItem.open = true
+                rotationAngle += 180
+            }
+        })
+        .rotation3DEffect(
+            Angle(degrees: rotationAngle),
+            axis: (x: 0, y: 1, z: 0)
+        )
         .allowsHitTesting(!cardItem.open)
     }
 }

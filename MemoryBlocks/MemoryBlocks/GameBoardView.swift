@@ -13,9 +13,9 @@ struct GameBoardView: View {
     var columns: [GridItem] {
         [GridItem](repeating: GridItem(.flexible()), count: gameBoard.column)
     }
-    
-    @State private var firstCardOpened = false
+
     @State private var secondCardOpened = false
+    @State private var firstCardOpened = false
     
     @State private var firstCardIndex: Int = 0
     @State private var secondCardIndex: Int = 0
@@ -42,15 +42,14 @@ struct GameBoardView: View {
                     ForEach(0..<cardViews.count, id: \.self) { index in
                         cardViews[index]
                             .frame(width: gameBoard.cardSize, height: gameBoard.cardSize)
-                            .onTapGesture {
+                            .simultaneousGesture(TapGesture().onEnded {
+                                
                                 if !firstCardOpened {
                                     firstCardOpened = true
-                                    cardViews[index].cardItem.open = true
                                     firstCard = cardViews[index].cardItem
                                     firstCardIndex = index
                                 } else if !secondCardOpened {
                                     secondCardOpened = true
-                                    cardViews[index].cardItem.open = true
                                     secondCard = cardViews[index].cardItem
                                     secondCardIndex = index
                                 }
@@ -72,7 +71,7 @@ struct GameBoardView: View {
                                         }
                                     }
                                 }
-                            }
+                            })
                     }
                 }
                 .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
