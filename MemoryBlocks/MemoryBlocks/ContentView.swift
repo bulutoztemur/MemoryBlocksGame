@@ -33,6 +33,7 @@ struct ContentView: View {
                                 .background(Color.blue)
                                 .foregroundColor(.white)
                                 .font(.title)
+                                .cornerRadius(32.0)
                         }
                     }
                 }

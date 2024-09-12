@@ -7,21 +7,31 @@
 
 import SwiftUI
 
+class Rotation: ObservableObject {
+    @Published var angle: Double
+    
+    init(angle: Double) {
+        self.angle = angle
+    }
+}
+
 struct CardView: View {
     @ObservedObject var cardItem: CardItem
-    
-    @State var rotationAngle: Double = 0.0
+    @ObservedObject var rotation: Rotation = Rotation(angle: 0.0)
 
     var body: some View {
         ZStack {
             if !cardItem.open {
                 cardItem.card.defaultImage
                     .resizable()
-                    .padding(8)
+                    .background(
+                        RoundedRectangle(cornerRadius: 16, style: .continuous).fill(.clear)
+                    )
                     .overlay(
-                            RoundedRectangle(cornerRadius: 16)
-                                .stroke(.blue, lineWidth: 4)
-                        )
+                            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                .stroke(.blue, lineWidth: 6)
+                    )
+                    
             }
             
             if cardItem.open {
@@ -35,19 +45,24 @@ struct CardView: View {
             }
         }
         .simultaneousGesture(TapGesture().onEnded {
-            withAnimation(.easeInOut(duration: 0.5)) {
-                cardItem.open = true
-                rotationAngle += 180
-            }
+            flipCard()
         })
         .rotation3DEffect(
-            Angle(degrees: rotationAngle),
+            Angle(degrees: rotation.angle),
             axis: (x: 0, y: 1, z: 0)
         )
         .allowsHitTesting(!cardItem.open)
+    }
+    
+    func flipCard() {
+        withAnimation(.easeInOut(duration: 0.6)) {
+            cardItem.open.toggle()
+            rotation.angle += 180
+        }
     }
 }
 
 #Preview {
     CardView(cardItem: CardItem(card: .bicycle))
+        .frame(width: 100, height: 100)
 }

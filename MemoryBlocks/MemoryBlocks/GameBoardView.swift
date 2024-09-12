@@ -13,20 +13,14 @@ struct GameBoardView: View {
     var columns: [GridItem] {
         [GridItem](repeating: GridItem(.flexible()), count: gameBoard.column)
     }
-
-    @State private var secondCardOpened = false
-    @State private var firstCardOpened = false
     
-    @State private var firstCardIndex: Int = 0
-    @State private var secondCardIndex: Int = 0
+    @State private var firstCardIndex: Int?
+    @State private var secondCardIndex: Int?
     
     @State private var viewModel: ViewModel
     
     private var cardViews: [CardView] = []
-    
-    @State private var firstCard: CardItem?
-    @State private var secondCard: CardItem?
-        
+            
     var index: Int?
     
     init(gameBoard: GameBoard) {
@@ -43,41 +37,49 @@ struct GameBoardView: View {
                         cardViews[index]
                             .frame(width: gameBoard.cardSize, height: gameBoard.cardSize)
                             .simultaneousGesture(TapGesture().onEnded {
-                                
-                                if !firstCardOpened {
-                                    firstCardOpened = true
-                                    firstCard = cardViews[index].cardItem
+                                if firstCardIndex == nil {
                                     firstCardIndex = index
-                                } else if !secondCardOpened {
-                                    secondCardOpened = true
-                                    secondCard = cardViews[index].cardItem
+                                } else if secondCardIndex == nil {
                                     secondCardIndex = index
+                                } else {
+                                    fatalError("EXCEPTIONAL CASE")
                                 }
                                 
-                                if let firstCard, let secondCard {
-                                    if firstCard.card.rawValue == secondCard.card.rawValue {
-                                        firstCardOpened = false
-                                        secondCardOpened = false
-                                        self.firstCard = nil
-                                        self.secondCard = nil
+                                if let firstCardIndex, let secondCardIndex {
+                                    if cardViews[firstCardIndex].cardItem.card.rawValue == cardViews[secondCardIndex].cardItem.card.rawValue {
+                                        cardsMatched()
                                     } else {
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                            firstCardOpened = false
-                                            secondCardOpened = false
-                                            firstCard.open = false
-                                            secondCard.open = false
-                                            self.firstCard = nil
-                                            self.secondCard = nil
-                                        }
+                                        cardsUnmatched()
                                     }
                                 }
                             })
                     }
                 }
                 .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
-                .allowsHitTesting(!secondCardOpened)
+                .allowsHitTesting(secondCardIndex == nil)
             }
         }
+    }
+    
+    func flipOverUnmatchedCards() {
+        self.cardViews[firstCardIndex!].flipCard()
+        self.cardViews[secondCardIndex!].flipCard()
+    }
+    
+    func reset() {
+        self.firstCardIndex = nil
+        self.secondCardIndex = nil
+    }
+    
+    func cardsUnmatched() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.flipOverUnmatchedCards()
+            self.reset()
+        }
+    }
+    
+    func cardsMatched() {
+        self.reset()
     }
 }
 

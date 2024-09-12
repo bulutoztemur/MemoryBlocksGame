@@ -11,7 +11,7 @@ import UIKit
 enum GameBoard: CaseIterable {
     case twotwo
     case threetwo
-    case fourtwo
+    case fourfour
     case sixfour
     
     var row: Int {
@@ -20,7 +20,7 @@ enum GameBoard: CaseIterable {
             2
         case .threetwo:
             3
-        case .fourtwo:
+        case .fourfour:
             4
         case .sixfour:
             6
@@ -33,8 +33,8 @@ enum GameBoard: CaseIterable {
             2
         case .threetwo:
             2
-        case .fourtwo:
-            2
+        case .fourfour:
+            4
         case .sixfour:
             4
         }
@@ -50,8 +50,8 @@ enum GameBoard: CaseIterable {
             "2x2"
         case .threetwo:
             "3x2"
-        case .fourtwo:
-            "4x2"
+        case .fourfour:
+            "4x4"
         case .sixfour:
             "6x4"
         }
