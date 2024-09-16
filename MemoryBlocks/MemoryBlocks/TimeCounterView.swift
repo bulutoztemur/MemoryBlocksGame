@@ -19,7 +19,7 @@ struct TimeCounterView: View {
     var body: some View {
         VStack {
             Text("\(secondsToHoursMinutesSeconds(timeElapsed))")
-                .font(.largeTitle)
+                .font(.title)
         }
         .onReceive(timer) { _ in
             if timerActive {

@@ -43,13 +43,13 @@ struct GameBoardView: View {
                 }
                 .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
                 .allowsHitTesting(viewModel.gameBoardEnable)
-    
+
                 HStack(alignment: .top, spacing: 10) {
                     TimeCounterView(timerActive: $timerActive)
                     Spacer()
                     VStack(spacing: 10) {
                         Text("Match: \(viewModel.currentMatch)/\(viewModel.maxMatch)")
-                            .font(.title)
+                            .font(.title2)
                         Text("Mismatch: \(viewModel.mismatch)")
                             .font(.title2)
                             .foregroundStyle(.red)
