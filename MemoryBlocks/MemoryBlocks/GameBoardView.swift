@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct GameBoardView: View {
+    @Environment(\.dismiss) private var dismiss
+    
     var gameBoard: GameBoard
     
     var columns: [GridItem] {
         [GridItem](repeating: GridItem(.flexible()), count: gameBoard.column)
     }
-        
+    
     @State private var viewModel: ViewModel
+    @State private var timerActive: Bool = false
+    @State private var isGameFinished: Bool = false
                     
     init(gameBoard: GameBoard) {
         self.gameBoard = gameBoard
@@ -25,22 +29,51 @@ struct GameBoardView: View {
         GeometryReader { geometry in
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(0..<viewModel.cardViews.count, id: \.self) { index in
+                    ForEach(0 ..< viewModel.cardViews.count, id: \.self) { index in
                         viewModel.cardViews[index]
                             .frame(width: gameBoard.cardSize, height: gameBoard.cardSize)
                             .simultaneousGesture(TapGesture().onEnded {
+                                timerActive = true
                                 viewModel.checkCardOrder(index)
                                 viewModel.checkMatch()
+                                isGameFinished = viewModel.checkFinished()
+                                timerActive = !isGameFinished
                             })
                     }
                 }
                 .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
                 .allowsHitTesting(viewModel.gameBoardEnable)
+    
+                HStack(alignment: .top, spacing: 10) {
+                    TimeCounterView(timerActive: $timerActive)
+                    Spacer()
+                    VStack(spacing: 10) {
+                        Text("Match: \(viewModel.currentMatch)/\(viewModel.maxMatch)")
+                            .font(.title)
+                        Text("Mismatch: \(viewModel.mismatch)")
+                            .font(.title2)
+                            .foregroundStyle(.red)
+                    }
+                }
+                .padding()
+            }
+            .alert("CONGRATULATIONS", isPresented: $isGameFinished) {
+                Button("YES") {
+                    dismiss()
+                }
+                Button(role: .cancel, action: {
+                    
+                }, label: {
+                    Text("NO")
+                        .foregroundStyle(.red)
+                })
+            } message: {
+                Text("Do you want to go to main screen?")
             }
         }
     }
 }
 
 #Preview {
-    GameBoardView(gameBoard: .sixfour)
+    GameBoardView(gameBoard: .threetwo)
 }

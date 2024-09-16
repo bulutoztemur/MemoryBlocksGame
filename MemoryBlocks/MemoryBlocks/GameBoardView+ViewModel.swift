@@ -9,20 +9,25 @@ import Foundation
 
 extension GameBoardView {
     @Observable
-    class ViewModel {
+    class ViewModel: ObservableObject {
         private var gameBoard: GameBoard
         private(set) var cardViews: [CardView] = []
         
         private var firstCardIndex: Int?
         private var secondCardIndex: Int?
-        
+                
         var gameBoardEnable: Bool {
             secondCardIndex == nil
         }
         
+        var maxMatch: Int
+        var currentMatch: Int = 0
+        var mismatch: Int = 0
+        
         init(gameBoard: GameBoard) {
             self.gameBoard = gameBoard
-            
+            self.maxMatch = gameBoard.column * gameBoard.row / 2
+
             for i in 0..<(gameBoard.column * gameBoard.row / 2) {
                 cardViews.append(CardView(cardItem: CardItem(card: Card(rawValue: i) ?? Card.bicycle)))
                 cardViews.append(CardView(cardItem: CardItem(card: Card(rawValue: i) ?? Card.bicycle)))
@@ -53,12 +58,15 @@ extension GameBoardView {
         
         private func cardsUnmatched() {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.mismatch += 1
                 self.flipOverUnmatchedCards()
                 self.reset()
             }
         }
         
         private func cardsMatched() {
+            currentMatch += 1
+            print(currentMatch)
             self.reset()
         }
         
@@ -70,6 +78,10 @@ extension GameBoardView {
                     cardsUnmatched()
                 }
             }
+        }
+        
+        func checkFinished() -> Bool {
+            currentMatch == maxMatch
         }
     }
 }
