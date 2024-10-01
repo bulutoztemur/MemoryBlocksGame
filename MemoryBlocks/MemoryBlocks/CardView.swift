@@ -7,73 +7,60 @@
 
 import SwiftUI
 
-class Rotation: ObservableObject {
+class CardConfig: ObservableObject {
     @Published var angle: Double
-    
-    init(angle: Double) {
-        self.angle = angle
-    }
-}
-
-class Opacity: ObservableObject {
     @Published var opacity: Double
+    @Published var open: Bool
     
-    init(opacity: Double) {
+    init(angle: Double = 0.0, opacity: Double = 1.0, open: Bool = false) {
+        self.angle = angle
         self.opacity = opacity
+        self.open = open
     }
+
 }
 
 struct CardView: View {
-    @ObservedObject var cardItem: CardItem
-    @ObservedObject var rotation: Rotation = Rotation(angle: 0.0)
-    @ObservedObject var opacity: Opacity = Opacity(opacity: 1.0)
+    var cardItem: CardItem
+    @ObservedObject private var config: CardConfig = CardConfig()
     
     var body: some View {
         ZStack {
-            if !cardItem.open {
-                cardItem.card.defaultImage
-                    .resizable()
-                    .background(
-                        RoundedRectangle(cornerRadius: 16, style: .continuous).fill(.clear)
-                    )
-                    .overlay(
-                            RoundedRectangle(cornerRadius: 16, style: .continuous)
-                                .stroke(.blue, lineWidth: 4)
-                    )
-            }
-            
-            if cardItem.open {
-                cardItem.card.image
-                    .resizable()
-                    .padding(8)
-                    .overlay(
-                            RoundedRectangle(cornerRadius: 16)
-                                .stroke(.blue, lineWidth: 4)
-                        )
-            }
+            let image = config.open ? cardItem.card.image : cardItem.card.defaultImage
+            let padding = config.open ? 8.0 : 0.0
+            image
+                .resizable()
+                .padding(padding)
+                .background(
+                    RoundedRectangle(cornerRadius: 16, style: .continuous).fill(.clear)
+                )
+                .overlay(
+                        RoundedRectangle(cornerRadius: 16, style: .continuous)
+                            .stroke(.blue, lineWidth: 4)
+                )
         }
-        .opacity(opacity.opacity)
+        .opacity(config.opacity)
         .simultaneousGesture(TapGesture().onEnded {
             flipCard()
         })
         .rotation3DEffect(
-            Angle(degrees: rotation.angle),
+            Angle(degrees: config.angle),
             axis: (x: 0, y: 1, z: 0)
         )
-        .allowsHitTesting(!cardItem.open)
+        .allowsHitTesting(!config.open)
     }
     
     func flipCard() {
         withAnimation(.easeInOut(duration: 0.6)) {
-            cardItem.open.toggle()
-            rotation.angle += 180
+            config.open.toggle()
+            config.angle += 180
         }
     }
     
     func reduceOpacity() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
             withAnimation(.easeInOut(duration: 0.5)) {
-                opacity.opacity = 0.2
+                config.opacity = 0.2
             }
         }
     }

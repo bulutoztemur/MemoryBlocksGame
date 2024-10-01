@@ -7,22 +7,21 @@
 
 import SwiftUI
 
-class CardItem: Identifiable, Hashable, ObservableObject {
+class CardItem: Identifiable, Hashable {
+    var id: UUID = UUID()
+    var card: Card
+        
     init(card: Card) {
         self.card = card
+    }
+
+    static func == (lhs: CardItem, rhs: CardItem) -> Bool {
+        rhs.id == lhs.id
     }
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
-    
-    static func == (lhs: CardItem, rhs: CardItem) -> Bool {
-        rhs.id == lhs.id
-    }
-    
-    var id: UUID = UUID()
-    var card: Card
-    @Published var open: Bool = false
 }
 
 enum Card: Int, CaseIterable {
