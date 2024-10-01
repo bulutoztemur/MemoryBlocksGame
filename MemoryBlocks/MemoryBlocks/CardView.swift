@@ -17,7 +17,7 @@ class CardConfig: ObservableObject {
         self.opacity = opacity
         self.open = open
     }
-
+    
 }
 
 struct CardView: View {
@@ -25,29 +25,28 @@ struct CardView: View {
     @ObservedObject private var config: CardConfig = CardConfig()
     
     var body: some View {
-        ZStack {
-            let image = config.open ? cardItem.card.image : cardItem.card.defaultImage
-            let padding = config.open ? 8.0 : 0.0
-            image
-                .resizable()
-                .padding(padding)
-                .background(
-                    RoundedRectangle(cornerRadius: 16, style: .continuous).fill(.clear)
-                )
-                .overlay(
-                        RoundedRectangle(cornerRadius: 16, style: .continuous)
-                            .stroke(.blue, lineWidth: 4)
-                )
-        }
-        .opacity(config.opacity)
-        .simultaneousGesture(TapGesture().onEnded {
-            flipCard()
-        })
-        .rotation3DEffect(
-            Angle(degrees: config.angle),
-            axis: (x: 0, y: 1, z: 0)
-        )
-        .allowsHitTesting(!config.open)
+        
+        let image = config.open ? cardItem.card.image : cardItem.card.defaultImage
+        let padding = config.open ? 8.0 : 0.0
+        image
+            .resizable()
+            .padding(padding)
+            .background(
+                RoundedRectangle(cornerRadius: 16, style: .continuous).fill(.clear)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .stroke(.blue, lineWidth: 4)
+            )
+            .opacity(config.opacity)
+            .simultaneousGesture(TapGesture().onEnded {
+                flipCard()
+            })
+            .rotation3DEffect(
+                Angle(degrees: config.angle),
+                axis: (x: 0, y: 1, z: 0)
+            )
+            .allowsHitTesting(!config.open)
     }
     
     func flipCard() {
