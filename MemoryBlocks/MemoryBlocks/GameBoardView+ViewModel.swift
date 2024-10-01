@@ -66,6 +66,8 @@ extension GameBoardView {
         
         private func cardsMatched() {
             currentMatch += 1
+            cardViews[firstCardIndex!].reduceOpacity()
+            cardViews[secondCardIndex!].reduceOpacity()
             self.reset()
         }
         

@@ -15,10 +15,19 @@ class Rotation: ObservableObject {
     }
 }
 
+class Opacity: ObservableObject {
+    @Published var opacity: Double
+    
+    init(opacity: Double) {
+        self.opacity = opacity
+    }
+}
+
 struct CardView: View {
     @ObservedObject var cardItem: CardItem
     @ObservedObject var rotation: Rotation = Rotation(angle: 0.0)
-
+    @ObservedObject var opacity: Opacity = Opacity(opacity: 1.0)
+    
     var body: some View {
         ZStack {
             if !cardItem.open {
@@ -31,7 +40,6 @@ struct CardView: View {
                             RoundedRectangle(cornerRadius: 16, style: .continuous)
                                 .stroke(.blue, lineWidth: 4)
                     )
-                    
             }
             
             if cardItem.open {
@@ -44,6 +52,7 @@ struct CardView: View {
                         )
             }
         }
+        .opacity(opacity.opacity)
         .simultaneousGesture(TapGesture().onEnded {
             flipCard()
         })
@@ -58,6 +67,14 @@ struct CardView: View {
         withAnimation(.easeInOut(duration: 0.6)) {
             cardItem.open.toggle()
             rotation.angle += 180
+        }
+    }
+    
+    func reduceOpacity() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+            withAnimation(.easeInOut(duration: 0.5)) {
+                opacity.opacity = 0.2
+            }
         }
     }
 }
