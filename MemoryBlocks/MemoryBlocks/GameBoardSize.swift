@@ -13,6 +13,8 @@ enum GameBoard: CaseIterable {
     case threetwo
     case fourfour
     case sixfour
+    case sixfive
+    case eightfive
     
     var row: Int {
         return switch self {
@@ -24,6 +26,10 @@ enum GameBoard: CaseIterable {
             4
         case .sixfour:
             6
+        case .sixfive:
+            6
+        case .eightfive:
+            8
         }
     }
     
@@ -37,6 +43,10 @@ enum GameBoard: CaseIterable {
             4
         case .sixfour:
             4
+        case .sixfive:
+            5
+        case .eightfive:
+            5
         }
     }
     
@@ -54,6 +64,10 @@ enum GameBoard: CaseIterable {
             "4x4"
         case .sixfour:
             "6x4"
+        case .sixfive:
+            "6x5"
+        case .eightfive:
+            "8x5"
         }
     }
 }

@@ -66,7 +66,6 @@ extension GameBoardView {
         
         private func cardsMatched() {
             currentMatch += 1
-            print(currentMatch)
             self.reset()
         }
         
