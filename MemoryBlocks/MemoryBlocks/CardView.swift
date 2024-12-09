@@ -17,7 +17,6 @@ class CardConfig: ObservableObject {
         self.opacity = opacity
         self.open = open
     }
-    
 }
 
 struct CardView: View {
@@ -31,6 +30,7 @@ struct CardView: View {
         image
             .resizable()
             .padding(padding)
+            .cornerRadius(16)
             .background(
                 RoundedRectangle(cornerRadius: 16, style: .continuous).fill(.clear)
             )
