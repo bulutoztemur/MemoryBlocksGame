@@ -17,6 +17,7 @@
 		5992E0C12C76052E00A5EE3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5992E0C02C76052E00A5EE3A /* Assets.xcassets */; };
 		5992E0C42C76052E00A5EE3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5992E0C32C76052E00A5EE3A /* Preview Assets.xcassets */; };
 		5992E0CB2C761E8A00A5EE3A /* GameBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992E0CA2C761E8A00A5EE3A /* GameBoardView.swift */; };
+		59FA08BE2D0589E30034FBD9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FA08BD2D0589E30034FBD9 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 				59742A412C7C98A900F93E3A /* CardItem.swift */,
 				59742A432C7CABDD00F93E3A /* CardView.swift */,
 				592BBCF32C94366700E759C9 /* TimeCounterView.swift */,
+				59FA08BD2D0589E30034FBD9 /* MainView.swift */,
 			);
 			path = MemoryBlocks;
 			sourceTree = "<group>";
@@ -156,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59742A422C7C98A900F93E3A /* CardItem.swift in Sources */,
+				59FA08BE2D0589E30034FBD9 /* MainView.swift in Sources */,
 				5992E0BF2C76052D00A5EE3A /* ContentView.swift in Sources */,
 				592BBCF42C94366700E759C9 /* TimeCounterView.swift in Sources */,
 				59742A462C7CC4BA00F93E3A /* GameBoardView+ViewModel.swift in Sources */,
@@ -296,7 +299,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MemoryBlocks/Preview Content\"";
-				DEVELOPMENT_TEAM = 6G96J5D7KG;
+				DEVELOPMENT_TEAM = LAK45PP47W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -325,7 +328,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MemoryBlocks/Preview Content\"";
-				DEVELOPMENT_TEAM = 6G96J5D7KG;
+				DEVELOPMENT_TEAM = LAK45PP47W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
