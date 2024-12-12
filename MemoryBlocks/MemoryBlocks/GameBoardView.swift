@@ -12,8 +12,20 @@ struct GameBoardView: View {
     
     var gameBoard: GameBoard
     
+    var isOrientationPortrait: Bool {
+        let o = UIDevice.current.orientation
+        switch o {
+        case .portrait, .portraitUpsideDown:
+            return true
+        case .landscapeLeft, .landscapeRight:
+            return false
+        default:
+            return true
+        }
+    }
+    
     var columns: [GridItem] {
-        [GridItem](repeating: GridItem(.flexible()), count: gameBoard.column)
+        [GridItem](repeating: GridItem(.flexible()), count: isOrientationPortrait ? gameBoard.column : gameBoard.row)
     }
     
     @State private var viewModel: ViewModel
@@ -28,7 +40,8 @@ struct GameBoardView: View {
     var body: some View {
         GeometryReader { geometry in
             ScrollView(.vertical, showsIndicators: false) {
-                LazyVGrid(columns: columns, spacing: 20) {
+                let _ = geometry.size.width
+                LazyVGrid(columns: columns, spacing: 16) {
                     ForEach(0 ..< viewModel.cardViews.count, id: \.self) { index in
                         viewModel.cardViews[index]
                             .frame(width: gameBoard.cardSize, height: gameBoard.cardSize)
@@ -44,10 +57,10 @@ struct GameBoardView: View {
                 .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
                 .allowsHitTesting(viewModel.gameBoardEnable)
 
-                HStack(alignment: .top, spacing: 10) {
+                HStack(alignment: .top, spacing: 16) {
                     TimeCounterView(timerActive: $timerActive)
                     Spacer()
-                    VStack(spacing: 10) {
+                    VStack(alignment: .trailing , spacing: 8) {
                         Text("Match: \(viewModel.currentMatch)/\(viewModel.maxMatch)")
                             .font(.title2)
                         Text("Mismatch: \(viewModel.mismatch)")
@@ -55,7 +68,7 @@ struct GameBoardView: View {
                             .foregroundStyle(.red)
                     }
                 }
-                .padding()
+                .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
             }
             .alert("CONGRATULATIONS", isPresented: $isGameFinished) {
                 Button("YES") {
@@ -75,5 +88,5 @@ struct GameBoardView: View {
 }
 
 #Preview {
-    GameBoardView(gameBoard: .threetwo)
+    GameBoardView(gameBoard: .sixfive)
 }

@@ -51,7 +51,7 @@ enum GameBoard: CaseIterable {
     }
     
     var cardSize: CGFloat {
-        (UIScreen.main.bounds.width / CGFloat(column)) - 20.0
+        (UIScreen.main.bounds.width / CGFloat(isOrientationPortrait ? column : row)) - 20.0
     }
     
     var displayName: String {
@@ -68,6 +68,18 @@ enum GameBoard: CaseIterable {
             "6x5"
         case .eightfive:
             "8x5"
+        }
+    }
+    
+    var isOrientationPortrait: Bool {
+        let o = UIDevice.current.orientation
+        switch o {
+        case .portrait, .portraitUpsideDown:
+            return true
+        case .landscapeLeft, .landscapeRight:
+            return false
+        default:
+            return true
         }
     }
 }
