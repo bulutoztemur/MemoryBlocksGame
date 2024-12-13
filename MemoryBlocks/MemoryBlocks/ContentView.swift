@@ -15,22 +15,22 @@ struct ContentView: View {
     // Define a simple array of data
     let items = GameBoard.allCases
     
-    // Define the grid layout with 2 columns
-    let columns: [GridItem] = [
-        GridItem(.flexible()),
-        GridItem(.flexible())
-    ]
+    var numOfColums: Int { Int(ViewUtils.sharedInstance.widthWithoutSafeInsets / 180) }
     
+    var columns: [GridItem] {
+        [GridItem](repeating: GridItem(.flexible()), count: numOfColums)
+    }
+
     var body: some View {
         // Use a LazyVGrid to arrange items in a grid
         NavigationStack {
             GeometryReader { geometry in
                 ScrollView(.vertical, showsIndicators: false) {
-                    LazyVGrid(columns: columns, spacing: 20) {
+                    LazyVGrid(columns: columns, spacing: 16) {
                         ForEach(items, id: \.self) { item in
                             NavigationLink(value: item) {
                                 Text("\(item.displayName)")
-                                    .frame(width: geometry.size.width * 0.45, height: geometry.size.width * 0.45)
+                                    .frame(width: menuItemSize(geometry: geometry), height: menuItemSize(geometry: geometry))
                                     .background(Color.blue)
                                     .foregroundColor(.white)
                                     .font(.title)
@@ -45,6 +45,11 @@ struct ContentView: View {
             }
             .padding()
         }
+    }
+    
+    func menuItemSize(geometry: GeometryProxy) -> CGFloat {
+        let size = (geometry.size.width / CGFloat(numOfColums)) - 16
+        return max(size, 32.0)
     }
 }
 

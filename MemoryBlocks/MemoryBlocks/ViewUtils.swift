@@ -17,6 +17,8 @@ final class ViewUtils {
 }
 
 extension ViewUtils {
+    public var width: CGFloat { UIScreen.main.bounds.width }
+    public var widthWithoutSafeInsets: CGFloat { width - safeInsetsLeft - safeInsetsRight }
     public var safeInsetsTop: CGFloat { (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.safeAreaInsets.top ?? 0 }
     public var safeInsetsBottom: CGFloat { (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.safeAreaInsets.bottom ?? 0 }
     public var safeInsetsLeft: CGFloat { (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.safeAreaInsets.left ?? 0 }
