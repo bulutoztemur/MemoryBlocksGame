@@ -11,21 +11,9 @@ struct GameBoardView: View {
     @Environment(\.dismiss) private var dismiss
     
     var gameBoard: GameBoard
-    
-    var isOrientationPortrait: Bool {
-        let o = UIDevice.current.orientation
-        switch o {
-        case .portrait, .portraitUpsideDown:
-            return true
-        case .landscapeLeft, .landscapeRight:
-            return false
-        default:
-            return true
-        }
-    }
-    
+        
     var columns: [GridItem] {
-        [GridItem](repeating: GridItem(.flexible()), count: isOrientationPortrait ? gameBoard.column : gameBoard.row)
+        [GridItem](repeating: GridItem(.flexible()), count: ViewUtils.sharedInstance.isOrientationPortrait ? gameBoard.column : gameBoard.row)
     }
     
     @State private var viewModel: ViewModel
