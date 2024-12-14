@@ -20,6 +20,9 @@
 		5992E0CB2C761E8A00A5EE3A /* GameBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992E0CA2C761E8A00A5EE3A /* GameBoardView.swift */; };
 		59B135162D0CCD0600287B07 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B135152D0CCD0600287B07 /* MainView.swift */; };
 		59B135182D0CCD2D00287B07 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B135172D0CCD2D00287B07 /* SettingsView.swift */; };
+		59B6E0842D0DCD4200064500 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 59B6E0832D0DCD4200064500 /* Localizable.xcstrings */; };
+		59B6E0872D0E4B2300064500 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B6E0862D0E4B2300064500 /* Language.swift */; };
+		59B6E0892D0E515A00064500 /* LanguageSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B6E0882D0E515A00064500 /* LanguageSettings.swift */; };
 		59FA08BE2D0589E30034FBD9 /* (null) in Sources */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
@@ -38,6 +41,10 @@
 		5992E0CA2C761E8A00A5EE3A /* GameBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
 		59B135152D0CCD0600287B07 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		59B135172D0CCD2D00287B07 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		59B6E0802D0D94EB00064500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		59B6E0832D0DCD4200064500 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		59B6E0862D0E4B2300064500 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		59B6E0882D0E515A00064500 /* LanguageSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +77,8 @@
 		5992E0BB2C76052D00A5EE3A /* MemoryBlocks */ = {
 			isa = PBXGroup;
 			children = (
+				59B6E0852D0E4B1500064500 /* Localization */,
+				59B6E0802D0D94EB00064500 /* Info.plist */,
 				59742A452C7CC4BA00F93E3A /* GameBoardView+ViewModel.swift */,
 				5992E0BC2C76052D00A5EE3A /* MemoryBlocksApp.swift */,
 				5992E0BE2C76052D00A5EE3A /* ContentView.swift */,
@@ -93,6 +102,16 @@
 				5992E0C32C76052E00A5EE3A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		59B6E0852D0E4B1500064500 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				59B6E0832D0DCD4200064500 /* Localizable.xcstrings */,
+				59B6E0862D0E4B2300064500 /* Language.swift */,
+				59B6E0882D0E515A00064500 /* LanguageSettings.swift */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +156,7 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = 5992E0B02C76052D00A5EE3A;
 			productRefGroup = 5992E0BA2C76052D00A5EE3A /* Products */;
@@ -155,6 +175,7 @@
 			files = (
 				5992E0C42C76052E00A5EE3A /* Preview Assets.xcassets in Resources */,
 				5992E0C12C76052E00A5EE3A /* Assets.xcassets in Resources */,
+				59B6E0842D0DCD4200064500 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +194,9 @@
 				5992E0BD2C76052D00A5EE3A /* MemoryBlocksApp.swift in Sources */,
 				5956AF452D0C358900A43F3C /* ViewUtils.swift in Sources */,
 				59B135162D0CCD0600287B07 /* MainView.swift in Sources */,
+				59B6E0872D0E4B2300064500 /* Language.swift in Sources */,
 				5992E0CB2C761E8A00A5EE3A /* GameBoardView.swift in Sources */,
+				59B6E0892D0E515A00064500 /* LanguageSettings.swift in Sources */,
 				59B135182D0CCD2D00287B07 /* SettingsView.swift in Sources */,
 				59742A442C7CABDD00F93E3A /* CardView.swift in Sources */,
 				59742A402C7C805500F93E3A /* GameBoardSize.swift in Sources */,
@@ -313,10 +336,10 @@
 				DEVELOPMENT_TEAM = LAK45PP47W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MemoryBlocks/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Memory Blocks - Brain Gym";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -343,10 +366,10 @@
 				DEVELOPMENT_TEAM = LAK45PP47W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MemoryBlocks/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Memory Blocks - Brain Gym";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
