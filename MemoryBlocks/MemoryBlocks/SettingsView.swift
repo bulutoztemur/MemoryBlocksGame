@@ -77,7 +77,7 @@ struct SettingsView_Previews: PreviewProvider {
 
 
 class AppThemeViewModel: ObservableObject {
-    @AppStorage("isDarkMode") var isDarkMode: Bool = true
+    @AppStorage("isDarkMode") var isDarkMode: Bool = false
 }
 
 struct DarkModeViewModifier: ViewModifier {
@@ -85,6 +85,6 @@ struct DarkModeViewModifier: ViewModifier {
     
     public func body(content: Content) -> some View {
         content
-            .preferredColorScheme(appThemeViewModel.isDarkMode ? .dark : appThemeViewModel.isDarkMode == false ? .light : nil)
+            .preferredColorScheme(appThemeViewModel.isDarkMode ? .dark : .light)
     }
 }
