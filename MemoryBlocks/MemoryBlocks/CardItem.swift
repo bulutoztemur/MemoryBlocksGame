@@ -44,6 +44,7 @@ enum Card: Int, CaseIterable {
     case taxi
     case train
     case truck
+    case zeppelin
     
     var image: Image {
         return switch self {
@@ -85,6 +86,8 @@ enum Card: Int, CaseIterable {
             Image(.train)
         case .truck:
             Image(.truck)
+        case .zeppelin:
+            Image(.zeppelin)
         }
     }
     

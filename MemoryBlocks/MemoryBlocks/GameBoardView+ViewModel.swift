@@ -27,8 +27,12 @@ extension GameBoardView {
         init(gameBoard: GameBoard) {
             self.gameBoard = gameBoard
             self.maxMatch = gameBoard.column * gameBoard.row / 2
+            
+            let arraySize = gameBoard.column * gameBoard.row / 2
+            let allItemsIndex = Array(0..<20).shuffled()
+            let itemIndexesForBoard = allItemsIndex[0 ..< arraySize]
 
-            for i in 0..<(gameBoard.column * gameBoard.row / 2) {
+            for i in itemIndexesForBoard {
                 cardViews.append(CardView(cardItem: CardItem(card: Card(rawValue: i) ?? Card.bicycle)))
                 cardViews.append(CardView(cardItem: CardItem(card: Card(rawValue: i) ?? Card.bicycle)))
             }
