@@ -11,7 +11,8 @@ import SwiftUI
 struct MemoryBlocksApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
+                .modifier(DarkModeViewModifier())
         }
     }
 }

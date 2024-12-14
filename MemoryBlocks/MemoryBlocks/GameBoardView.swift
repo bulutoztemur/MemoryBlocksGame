@@ -72,6 +72,7 @@ struct GameBoardView: View {
                 Text("Do you want to go to main screen?")
             }
         }
+        .toolbar(.hidden, for: .tabBar)
     }
 }
 

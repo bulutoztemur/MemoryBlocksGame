@@ -18,6 +18,8 @@
 		5992E0C12C76052E00A5EE3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5992E0C02C76052E00A5EE3A /* Assets.xcassets */; };
 		5992E0C42C76052E00A5EE3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5992E0C32C76052E00A5EE3A /* Preview Assets.xcassets */; };
 		5992E0CB2C761E8A00A5EE3A /* GameBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992E0CA2C761E8A00A5EE3A /* GameBoardView.swift */; };
+		59B135162D0CCD0600287B07 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B135152D0CCD0600287B07 /* MainView.swift */; };
+		59B135182D0CCD2D00287B07 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B135172D0CCD2D00287B07 /* SettingsView.swift */; };
 		59FA08BE2D0589E30034FBD9 /* (null) in Sources */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,8 @@
 		5992E0C02C76052E00A5EE3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5992E0C32C76052E00A5EE3A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5992E0CA2C761E8A00A5EE3A /* GameBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
+		59B135152D0CCD0600287B07 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		59B135172D0CCD2D00287B07 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 				59742A432C7CABDD00F93E3A /* CardView.swift */,
 				592BBCF32C94366700E759C9 /* TimeCounterView.swift */,
 				5956AF442D0C358900A43F3C /* ViewUtils.swift */,
+				59B135152D0CCD0600287B07 /* MainView.swift */,
+				59B135172D0CCD2D00287B07 /* SettingsView.swift */,
 			);
 			path = MemoryBlocks;
 			sourceTree = "<group>";
@@ -166,7 +172,9 @@
 				59742A462C7CC4BA00F93E3A /* GameBoardView+ViewModel.swift in Sources */,
 				5992E0BD2C76052D00A5EE3A /* MemoryBlocksApp.swift in Sources */,
 				5956AF452D0C358900A43F3C /* ViewUtils.swift in Sources */,
+				59B135162D0CCD0600287B07 /* MainView.swift in Sources */,
 				5992E0CB2C761E8A00A5EE3A /* GameBoardView.swift in Sources */,
+				59B135182D0CCD2D00287B07 /* SettingsView.swift in Sources */,
 				59742A442C7CABDD00F93E3A /* CardView.swift in Sources */,
 				59742A402C7C805500F93E3A /* GameBoardSize.swift in Sources */,
 			);
