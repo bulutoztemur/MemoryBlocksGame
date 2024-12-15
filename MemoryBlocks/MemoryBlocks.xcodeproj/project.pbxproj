@@ -92,10 +92,7 @@
 		5992E0BB2C76052D00A5EE3A /* MemoryBlocks */ = {
 			isa = PBXGroup;
 			children = (
-				59B6E0932D0F3BB300064500 /* claphands.mp3 */,
-				59B6E0972D0F421700064500 /* cardflip.wav */,
-				59B6E0962D0F421700064500 /* match.wav */,
-				59B6E0952D0F421700064500 /* mismatch.mp3 */,
+				59B6E09B2D0F502100064500 /* Resources */,
 				59B6E0852D0E4B1500064500 /* Localization */,
 				59B6E0802D0D94EB00064500 /* Info.plist */,
 				59742A452C7CC4BA00F93E3A /* GameBoardView+ViewModel.swift */,
@@ -133,6 +130,25 @@
 				59B6E08A2D0EEAAC00064500 /* InfoPlist.xcstrings */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		59B6E09B2D0F502100064500 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				59B6E09C2D0F502700064500 /* Sounds */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		59B6E09C2D0F502700064500 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				59B6E0932D0F3BB300064500 /* claphands.mp3 */,
+				59B6E0972D0F421700064500 /* cardflip.wav */,
+				59B6E0962D0F421700064500 /* match.wav */,
+				59B6E0952D0F421700064500 /* mismatch.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
