@@ -51,7 +51,7 @@ struct SettingsView: View {
                     }
                     
                     Section(header: Text("Version")) {
-                        Text("1.1.4")
+                        Text(Bundle.main.appVersion)
                     }
                 }
             })

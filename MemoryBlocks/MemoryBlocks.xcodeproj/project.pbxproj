@@ -25,6 +25,7 @@
 		59B6E0892D0E515A00064500 /* LanguageViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B6E0882D0E515A00064500 /* LanguageViewModifier.swift */; };
 		59B6E08B2D0EEAAC00064500 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 59B6E08A2D0EEAAC00064500 /* InfoPlist.xcstrings */; };
 		59B6E08D2D0EEC9200064500 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59B6E08C2D0EEC9200064500 /* Launch Screen.storyboard */; };
+		59B6E0922D0F1A8E00064500 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B6E0912D0F1A8E00064500 /* Bundle+Extensions.swift */; };
 		59FA08BE2D0589E30034FBD9 /* (null) in Sources */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		59B6E0882D0E515A00064500 /* LanguageViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewModifier.swift; sourceTree = "<group>"; };
 		59B6E08A2D0EEAAC00064500 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		59B6E08C2D0EEC9200064500 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		59B6E0912D0F1A8E00064500 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				5956AF442D0C358900A43F3C /* ViewUtils.swift */,
 				59B135152D0CCD0600287B07 /* MainView.swift */,
 				59B135172D0CCD2D00287B07 /* SettingsView.swift */,
+				59B6E0912D0F1A8E00064500 /* Bundle+Extensions.swift */,
 			);
 			path = MemoryBlocks;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				592BBCF42C94366700E759C9 /* TimeCounterView.swift in Sources */,
 				59742A462C7CC4BA00F93E3A /* GameBoardView+ViewModel.swift in Sources */,
 				5992E0BD2C76052D00A5EE3A /* MemoryBlocksApp.swift in Sources */,
+				59B6E0922D0F1A8E00064500 /* Bundle+Extensions.swift in Sources */,
 				5956AF452D0C358900A43F3C /* ViewUtils.swift in Sources */,
 				59B135162D0CCD0600287B07 /* MainView.swift in Sources */,
 				59B6E0872D0E4B2300064500 /* Language.swift in Sources */,
