@@ -8,6 +8,8 @@
 import Foundation
 
 enum Language: String, CaseIterable, Codable {
+    static let defaultValue = Language(rawValue: Locale.current.language.languageCode?.identifier ?? "en") ?? .english
+    
     case english = "en"
     case turkish = "tr"
     

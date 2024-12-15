@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @AppStorage("isDarkMode") private var isDarkMode = false
-    @AppStorage("selectedLanguage") private var selectedLanguage: Language = LanguageSettingsManager.shared.language
+    @AppStorage("selectedLanguage") private var selectedLanguage: Language = Language.defaultValue
     
     var body: some View {
         NavigationView {
@@ -27,7 +27,6 @@ struct SettingsView: View {
                                 Text("\(flag(for: language.flagId)) " + language.languageString)
                             }
                         }
-                        .onChange(of: selectedLanguage){ LanguageSettingsManager.shared.language = selectedLanguage }
                     }
                     
                     Section(header: Text("Share")) {
@@ -65,22 +64,18 @@ struct SettingsView: View {
     }
 }
 
-class AppThemeViewModel: ObservableObject {
-    @AppStorage("isDarkMode") var isDarkMode: Bool = false
-}
-
-struct DarkModeViewModifier: ViewModifier {
-    @ObservedObject var appThemeViewModel: AppThemeViewModel = AppThemeViewModel()
-    
-    public func body(content: Content) -> some View {
-        content
-            .preferredColorScheme(appThemeViewModel.isDarkMode ? .dark : .light)
-    }
-}
-
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
-            .environment(LanguageSettingsManager.shared)
     }
 }
+
+struct DarkModeViewModifier: ViewModifier {
+    @AppStorage("isDarkMode") var isDarkMode: Bool = false
+
+    public func body(content: Content) -> some View {
+        content
+            .preferredColorScheme(isDarkMode ? .dark : .light)
+    }
+}
+

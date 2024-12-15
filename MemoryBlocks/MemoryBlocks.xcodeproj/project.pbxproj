@@ -22,7 +22,7 @@
 		59B135182D0CCD2D00287B07 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B135172D0CCD2D00287B07 /* SettingsView.swift */; };
 		59B6E0842D0DCD4200064500 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 59B6E0832D0DCD4200064500 /* Localizable.xcstrings */; };
 		59B6E0872D0E4B2300064500 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B6E0862D0E4B2300064500 /* Language.swift */; };
-		59B6E0892D0E515A00064500 /* LanguageSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B6E0882D0E515A00064500 /* LanguageSettings.swift */; };
+		59B6E0892D0E515A00064500 /* LanguageViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B6E0882D0E515A00064500 /* LanguageViewModifier.swift */; };
 		59B6E08B2D0EEAAC00064500 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 59B6E08A2D0EEAAC00064500 /* InfoPlist.xcstrings */; };
 		59B6E08D2D0EEC9200064500 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59B6E08C2D0EEC9200064500 /* Launch Screen.storyboard */; };
 		59FA08BE2D0589E30034FBD9 /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -46,7 +46,7 @@
 		59B6E0802D0D94EB00064500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		59B6E0832D0DCD4200064500 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		59B6E0862D0E4B2300064500 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
-		59B6E0882D0E515A00064500 /* LanguageSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSettings.swift; sourceTree = "<group>"; };
+		59B6E0882D0E515A00064500 /* LanguageViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewModifier.swift; sourceTree = "<group>"; };
 		59B6E08A2D0EEAAC00064500 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		59B6E08C2D0EEC9200064500 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,7 +114,7 @@
 			children = (
 				59B6E0832D0DCD4200064500 /* Localizable.xcstrings */,
 				59B6E0862D0E4B2300064500 /* Language.swift */,
-				59B6E0882D0E515A00064500 /* LanguageSettings.swift */,
+				59B6E0882D0E515A00064500 /* LanguageViewModifier.swift */,
 				59B6E08A2D0EEAAC00064500 /* InfoPlist.xcstrings */,
 			);
 			path = Localization;
@@ -204,7 +204,7 @@
 				59B135162D0CCD0600287B07 /* MainView.swift in Sources */,
 				59B6E0872D0E4B2300064500 /* Language.swift in Sources */,
 				5992E0CB2C761E8A00A5EE3A /* GameBoardView.swift in Sources */,
-				59B6E0892D0E515A00064500 /* LanguageSettings.swift in Sources */,
+				59B6E0892D0E515A00064500 /* LanguageViewModifier.swift in Sources */,
 				59B135182D0CCD2D00287B07 /* SettingsView.swift in Sources */,
 				59742A442C7CABDD00F93E3A /* CardView.swift in Sources */,
 				59742A402C7C805500F93E3A /* GameBoardSize.swift in Sources */,

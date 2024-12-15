@@ -13,7 +13,8 @@ struct MemoryBlocksApp: App {
         WindowGroup {
             MainView()
                 .modifier(DarkModeViewModifier())
-                .environment(\.locale, Locale(identifier: LanguageSettingsManager.shared.language.rawValue))
+                .modifier(LanguageViewModifier())
+                // .environment(\.locale, Locale(identifier: LanguageSettingsManager.shared.language.rawValue))
         }
     }
 }
