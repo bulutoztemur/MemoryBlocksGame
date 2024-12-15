@@ -8,8 +8,11 @@
 import Foundation
 
 @Observable
-class LanguageSettings {
+class LanguageSettingsManager {
     // initialise this from UserDefaults if you like
+    
+    static let shared: LanguageSettingsManager = LanguageSettingsManager()
+    
     var language: Language {
         didSet {
             guard oldValue != self.language else { return }
@@ -19,7 +22,7 @@ class LanguageSettings {
         }
     }
     
-    init() {
+    private init() {
         if let data = UserDefaults.standard.object(forKey: "language") as? Data,
            let language = try? JSONDecoder().decode(Language.self, from: data) {
             self.language = language

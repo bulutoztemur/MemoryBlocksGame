@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @Environment(LanguageSettings.self) var languageSettings
     @AppStorage("isDarkMode") private var isDarkMode = false
-    @AppStorage("selectedLanguage") private var selectedLanguage: Language = .english
+    @AppStorage("selectedLanguage") private var selectedLanguage: Language = LanguageSettingsManager.shared.language
     
     var body: some View {
         NavigationView {
@@ -28,7 +27,7 @@ struct SettingsView: View {
                                 Text("\(flag(for: language.flagId)) " + language.languageString)
                             }
                         }
-                        .onChange(of: selectedLanguage){ languageSettings.language = selectedLanguage }
+                        .onChange(of: selectedLanguage){ LanguageSettingsManager.shared.language = selectedLanguage }
                     }
                     
                     Section(header: Text("Share")) {
@@ -82,6 +81,6 @@ struct DarkModeViewModifier: ViewModifier {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
-            .environment(LanguageSettings())
+            .environment(LanguageSettingsManager.shared)
     }
 }
