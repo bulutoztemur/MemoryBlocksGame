@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 extension GameBoardView {
     @Observable
@@ -15,6 +16,8 @@ extension GameBoardView {
         
         private var firstCardIndex: Int?
         private var secondCardIndex: Int?
+        
+        private var audioPlayer: AVAudioPlayer?
                 
         var gameBoardEnable: Bool {
             secondCardIndex == nil
@@ -42,6 +45,7 @@ extension GameBoardView {
         
         func checkCardOrder(_ index: Int) {
             if firstCardIndex == nil {
+                setupAudioPlayer(soundFile: "cardflip", fileExtension: "wav")
                 firstCardIndex = index
             } else if secondCardIndex == nil {
                 secondCardIndex = index
@@ -63,6 +67,7 @@ extension GameBoardView {
         private func cardsUnmatched() {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.mismatch += 1
+                self.setupAudioPlayer(soundFile: "mismatch", fileExtension: "mp3")
                 self.flipOverUnmatchedCards()
                 self.reset()
             }
@@ -70,6 +75,13 @@ extension GameBoardView {
         
         private func cardsMatched() {
             currentMatch += 1
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                if self.checkFinished() {
+                    self.setupAudioPlayer(soundFile: "claphands", fileExtension: "mp3")
+                } else {
+                    self.setupAudioPlayer(soundFile: "match", fileExtension: "wav")
+                }
+            }
             cardViews[firstCardIndex!].reduceOpacity()
             cardViews[secondCardIndex!].reduceOpacity()
             self.reset()
@@ -87,6 +99,21 @@ extension GameBoardView {
         
         func checkFinished() -> Bool {
             currentMatch == maxMatch
+        }
+        
+        func setupAudioPlayer(soundFile: String, fileExtension: String) {
+            if let path = Bundle.main.path(forResource: soundFile, ofType: fileExtension) {
+                let url = URL(fileURLWithPath: path)
+                do {
+                    audioPlayer = try AVAudioPlayer(contentsOf: url)
+                    audioPlayer?.prepareToPlay() // Preload the audio
+                    audioPlayer?.play()
+                } catch {
+                    print("Error loading audio file: \(error.localizedDescription)")
+                }
+            } else {
+                print("Audio file not found")
+            }
         }
     }
 }
