@@ -5,9 +5,11 @@
 //  Created by bulut.oztemur on 13.12.24.
 //
 
+import StoreKit
 import SwiftUI
 
 struct SettingsView: View {
+    @Environment(\.requestReview) private var requestReview
     @AppStorage("isDarkMode") private var isDarkMode = false
     @AppStorage("selectedLanguage") private var selectedLanguage: Language = Language.defaultValue
     
@@ -36,6 +38,16 @@ struct SettingsView: View {
                                 Text("Share Application")
                             }
                         }
+                    }
+                    Section(header: Text("Feedback")) {
+                        Button(action: {
+                            requestReview()
+                        }, label: {
+                            HStack {
+                                Image(systemName: "square.and.pencil")
+                                Text("Leave a review")
+                            }
+                        })
                     }
                     
                     Section(header: Text("Version")) {

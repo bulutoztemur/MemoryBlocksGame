@@ -11,19 +11,15 @@
         }
       }
     },
-    "1.1.2" : {
-      "extractionState" : "stale",
+    "1.1.4" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "1.1.2"
+            "value" : "1.1.4"
           }
         }
       }
-    },
-    "1.1.4" : {
-
     },
     "Appearance" : {
       "localizations" : {
@@ -65,12 +61,32 @@
         }
       }
     },
+    "Feedback" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geri Bildirim"
+          }
+        }
+      }
+    },
     "Language" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dil"
+          }
+        }
+      }
+    },
+    "Leave a review" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Değerlendirme yap"
           }
         }
       }
