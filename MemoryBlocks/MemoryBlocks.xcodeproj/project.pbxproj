@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		592BBCF42C94366700E759C9 /* TimeCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592BBCF32C94366700E759C9 /* TimeCounterView.swift */; };
 		5956AF452D0C358900A43F3C /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5956AF442D0C358900A43F3C /* ViewUtils.swift */; };
-		59742A402C7C805500F93E3A /* GameBoardSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59742A3F2C7C805500F93E3A /* GameBoardSize.swift */; };
+		59742A402C7C805500F93E3A /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59742A3F2C7C805500F93E3A /* GameBoard.swift */; };
 		59742A422C7C98A900F93E3A /* CardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59742A412C7C98A900F93E3A /* CardItem.swift */; };
 		59742A442C7CABDD00F93E3A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59742A432C7CABDD00F93E3A /* CardView.swift */; };
 		59742A462C7CC4BA00F93E3A /* GameBoardView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59742A452C7CC4BA00F93E3A /* GameBoardView+ViewModel.swift */; };
@@ -30,13 +30,17 @@
 		59B6E0982D0F421700064500 /* mismatch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 59B6E0952D0F421700064500 /* mismatch.mp3 */; };
 		59B6E0992D0F421700064500 /* match.wav in Resources */ = {isa = PBXBuildFile; fileRef = 59B6E0962D0F421700064500 /* match.wav */; };
 		59B6E09A2D0F421700064500 /* cardflip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 59B6E0972D0F421700064500 /* cardflip.wav */; };
+		59B6E0A02D0F8D1C00064500 /* CardThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B6E09F2D0F8D1C00064500 /* CardThemeManager.swift */; };
+		59B6E0A22D0F8D8600064500 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B6E0A12D0F8D8600064500 /* Card.swift */; };
+		59B6E0A52D0F8DC400064500 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B6E0A42D0F8DC400064500 /* Vehicle.swift */; };
+		59B6E0A72D0F8DCE00064500 /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B6E0A62D0F8DCE00064500 /* Flag.swift */; };
 		59FA08BE2D0589E30034FBD9 /* (null) in Sources */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		592BBCF32C94366700E759C9 /* TimeCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCounterView.swift; sourceTree = "<group>"; };
 		5956AF442D0C358900A43F3C /* ViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
-		59742A3F2C7C805500F93E3A /* GameBoardSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardSize.swift; sourceTree = "<group>"; };
+		59742A3F2C7C805500F93E3A /* GameBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
 		59742A412C7C98A900F93E3A /* CardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItem.swift; sourceTree = "<group>"; };
 		59742A432C7CABDD00F93E3A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		59742A452C7CC4BA00F93E3A /* GameBoardView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameBoardView+ViewModel.swift"; sourceTree = "<group>"; };
@@ -48,7 +52,7 @@
 		5992E0CA2C761E8A00A5EE3A /* GameBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
 		59B135152D0CCD0600287B07 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		59B135172D0CCD2D00287B07 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		59B6E0802D0D94EB00064500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		59B6E0802D0D94EB00064500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59B6E0832D0DCD4200064500 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		59B6E0862D0E4B2300064500 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		59B6E0882D0E515A00064500 /* LanguageViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewModifier.swift; sourceTree = "<group>"; };
@@ -59,6 +63,10 @@
 		59B6E0952D0F421700064500 /* mismatch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mismatch.mp3; sourceTree = "<group>"; };
 		59B6E0962D0F421700064500 /* match.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = match.wav; sourceTree = "<group>"; };
 		59B6E0972D0F421700064500 /* cardflip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardflip.wav; sourceTree = "<group>"; };
+		59B6E09F2D0F8D1C00064500 /* CardThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardThemeManager.swift; sourceTree = "<group>"; };
+		59B6E0A12D0F8D8600064500 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		59B6E0A42D0F8DC400064500 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		59B6E0A62D0F8DCE00064500 /* Flag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +83,6 @@
 		5992E0B02C76052D00A5EE3A = {
 			isa = PBXGroup;
 			children = (
-				59B6E08C2D0EEC9200064500 /* Launch Screen.storyboard */,
 				5992E0BB2C76052D00A5EE3A /* MemoryBlocks */,
 				5992E0BA2C76052D00A5EE3A /* Products */,
 			);
@@ -92,23 +99,14 @@
 		5992E0BB2C76052D00A5EE3A /* MemoryBlocks */ = {
 			isa = PBXGroup;
 			children = (
-				59B6E09B2D0F502100064500 /* Resources */,
-				59B6E0852D0E4B1500064500 /* Localization */,
-				59B6E0802D0D94EB00064500 /* Info.plist */,
-				59742A452C7CC4BA00F93E3A /* GameBoardView+ViewModel.swift */,
 				5992E0BC2C76052D00A5EE3A /* MemoryBlocksApp.swift */,
-				5992E0BE2C76052D00A5EE3A /* ContentView.swift */,
-				5992E0C02C76052E00A5EE3A /* Assets.xcassets */,
+				59B6E0AB2D0F8E6D00064500 /* Extensions */,
+				59B6E0A92D0F8E2900064500 /* Card */,
+				59B6E0A82D0F8E0900064500 /* Views */,
+				59B6E0A32D0F8DB900064500 /* CardThemes */,
+				59B6E09B2D0F502100064500 /* Resources */,
 				5992E0C22C76052E00A5EE3A /* Preview Content */,
-				5992E0CA2C761E8A00A5EE3A /* GameBoardView.swift */,
-				59742A3F2C7C805500F93E3A /* GameBoardSize.swift */,
-				59742A412C7C98A900F93E3A /* CardItem.swift */,
-				59742A432C7CABDD00F93E3A /* CardView.swift */,
-				592BBCF32C94366700E759C9 /* TimeCounterView.swift */,
 				5956AF442D0C358900A43F3C /* ViewUtils.swift */,
-				59B135152D0CCD0600287B07 /* MainView.swift */,
-				59B135172D0CCD2D00287B07 /* SettingsView.swift */,
-				59B6E0912D0F1A8E00064500 /* Bundle+Extensions.swift */,
 			);
 			path = MemoryBlocks;
 			sourceTree = "<group>";
@@ -135,6 +133,10 @@
 		59B6E09B2D0F502100064500 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				59B6E08C2D0EEC9200064500 /* Launch Screen.storyboard */,
+				5992E0C02C76052E00A5EE3A /* Assets.xcassets */,
+				59B6E0802D0D94EB00064500 /* Info.plist */,
+				59B6E0852D0E4B1500064500 /* Localization */,
 				59B6E09C2D0F502700064500 /* Sounds */,
 			);
 			path = Resources;
@@ -149,6 +151,56 @@
 				59B6E0952D0F421700064500 /* mismatch.mp3 */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		59B6E0A32D0F8DB900064500 /* CardThemes */ = {
+			isa = PBXGroup;
+			children = (
+				59B6E09F2D0F8D1C00064500 /* CardThemeManager.swift */,
+				59B6E0A42D0F8DC400064500 /* Vehicle.swift */,
+				59B6E0A62D0F8DCE00064500 /* Flag.swift */,
+			);
+			path = CardThemes;
+			sourceTree = "<group>";
+		};
+		59B6E0A82D0F8E0900064500 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				592BBCF32C94366700E759C9 /* TimeCounterView.swift */,
+				59B6E0AA2D0F8E5600064500 /* GameBoard */,
+				5992E0BE2C76052D00A5EE3A /* ContentView.swift */,
+				59B135152D0CCD0600287B07 /* MainView.swift */,
+				59B135172D0CCD2D00287B07 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		59B6E0A92D0F8E2900064500 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				59742A412C7C98A900F93E3A /* CardItem.swift */,
+				59742A432C7CABDD00F93E3A /* CardView.swift */,
+				59B6E0A12D0F8D8600064500 /* Card.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		59B6E0AA2D0F8E5600064500 /* GameBoard */ = {
+			isa = PBXGroup;
+			children = (
+				59742A452C7CC4BA00F93E3A /* GameBoardView+ViewModel.swift */,
+				5992E0CA2C761E8A00A5EE3A /* GameBoardView.swift */,
+				59742A3F2C7C805500F93E3A /* GameBoard.swift */,
+			);
+			path = GameBoard;
+			sourceTree = "<group>";
+		};
+		59B6E0AB2D0F8E6D00064500 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				59B6E0912D0F1A8E00064500 /* Bundle+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,21 +281,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59B6E0A52D0F8DC400064500 /* Vehicle.swift in Sources */,
 				59742A422C7C98A900F93E3A /* CardItem.swift in Sources */,
 				59FA08BE2D0589E30034FBD9 /* (null) in Sources */,
 				5992E0BF2C76052D00A5EE3A /* ContentView.swift in Sources */,
 				592BBCF42C94366700E759C9 /* TimeCounterView.swift in Sources */,
 				59742A462C7CC4BA00F93E3A /* GameBoardView+ViewModel.swift in Sources */,
 				5992E0BD2C76052D00A5EE3A /* MemoryBlocksApp.swift in Sources */,
+				59B6E0A22D0F8D8600064500 /* Card.swift in Sources */,
 				59B6E0922D0F1A8E00064500 /* Bundle+Extensions.swift in Sources */,
 				5956AF452D0C358900A43F3C /* ViewUtils.swift in Sources */,
 				59B135162D0CCD0600287B07 /* MainView.swift in Sources */,
+				59B6E0A02D0F8D1C00064500 /* CardThemeManager.swift in Sources */,
 				59B6E0872D0E4B2300064500 /* Language.swift in Sources */,
 				5992E0CB2C761E8A00A5EE3A /* GameBoardView.swift in Sources */,
 				59B6E0892D0E515A00064500 /* LanguageViewModifier.swift in Sources */,
 				59B135182D0CCD2D00287B07 /* SettingsView.swift in Sources */,
 				59742A442C7CABDD00F93E3A /* CardView.swift in Sources */,
-				59742A402C7C805500F93E3A /* GameBoardSize.swift in Sources */,
+				59742A402C7C805500F93E3A /* GameBoard.swift in Sources */,
+				59B6E0A72D0F8DCE00064500 /* Flag.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +436,7 @@
 				DEVELOPMENT_TEAM = LAK45PP47W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MemoryBlocks/Info.plist;
+				INFOPLIST_FILE = MemoryBlocks/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
@@ -410,7 +466,7 @@
 				DEVELOPMENT_TEAM = LAK45PP47W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MemoryBlocks/Info.plist;
+				INFOPLIST_FILE = MemoryBlocks/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";

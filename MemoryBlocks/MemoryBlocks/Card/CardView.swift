@@ -29,6 +29,7 @@ struct CardView: View {
         let padding = config.open ? 8.0 : 0.0
         image
             .resizable()
+            .scaleEffect(x: -1, y: 1)
             .padding(padding)
             .cornerRadius(16)
             .background(
@@ -66,6 +67,6 @@ struct CardView: View {
 }
 
 #Preview {
-    CardView(cardItem: CardItem(card: .bicycle))
+    CardView(cardItem: CardItem(card: Vehicle.bicycle))
         .frame(width: 100, height: 100)
 }
