@@ -36,8 +36,8 @@ extension GameBoardView {
             let itemIndexesForBoard = allItemsIndex[0 ..< arraySize]
 
             for i in itemIndexesForBoard {
-                cardViews.append(CardView(cardItem: CardItem(card: Card(rawValue: i) ?? Card.bicycle)))
-                cardViews.append(CardView(cardItem: CardItem(card: Card(rawValue: i) ?? Card.bicycle)))
+                cardViews.append(CardView(cardItem: CardItem(card: Card.Vehicle(rawValue: i) ?? Card.Vehicle.bicycle)))
+                cardViews.append(CardView(cardItem: CardItem(card: Card.Vehicle(rawValue: i) ?? Card.Vehicle.bicycle)))
             }
             
             cardViews.shuffle()
