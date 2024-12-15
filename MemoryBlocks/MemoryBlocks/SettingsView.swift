@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct SettingsView: View {
     @Environment(LanguageSettings.self) var languageSettings
     @AppStorage("isDarkMode") private var isDarkMode = false
@@ -43,10 +41,9 @@ struct SettingsView: View {
                     }
                     
                     Section(header: Text("Version")) {
-                        Text("1.1.2")
+                        Text("1.1.4")
                     }
                 }
-                
             })
             .navigationTitle("Settings")
         }

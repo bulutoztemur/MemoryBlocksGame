@@ -12,6 +12,7 @@
       }
     },
     "1.1.2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -20,6 +21,9 @@
           }
         }
       }
+    },
+    "1.1.4" : {
+
     },
     "Appearance" : {
       "localizations" : {
