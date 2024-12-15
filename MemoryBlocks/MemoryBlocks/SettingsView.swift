@@ -55,7 +55,7 @@ struct SettingsView: View {
                     }
                 }
             })
-            .navigationTitle(selectedLanguage == .english ? "Settings" : "Settings")
+            .navigationTitle(selectedLanguage.settingsNavigationTitle)
         }
     }
     
