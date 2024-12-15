@@ -25,4 +25,5 @@ struct MainView: View {
 
 #Preview {
     MainView()
+        .environment(LanguageSettings())
 }

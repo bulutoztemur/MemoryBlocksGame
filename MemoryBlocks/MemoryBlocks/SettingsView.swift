@@ -10,11 +10,10 @@ import SwiftUI
 import SwiftUI
 
 struct SettingsView: View {
+    @Environment(LanguageSettings.self) var languageSettings
     @AppStorage("isDarkMode") private var isDarkMode = false
-    @AppStorage("selectedLanguage") private var selectedLanguage = "English"
+    @AppStorage("selectedLanguage") private var selectedLanguage: Language = .english
     
-    let languages = ["English":"gb"]
-
     var body: some View {
         NavigationView {
             VStack(content: {
@@ -24,16 +23,17 @@ struct SettingsView: View {
                             Text("Dark Mode")
                         }
                     }
-
-                    Section(header: Text("Localization")) {
+                    
+                    Section(header: Text("Language")) {
                         Picker("Language", selection: $selectedLanguage) {
-                            ForEach(Array(languages.keys), id: \ .self) { language in
-                                Text("\(flag(for: languages[language] ?? "")) " + language)
+                            ForEach(Array(Language.allCases), id: \ .self) { language in
+                                Text("\(flag(for: language.flagId)) " + language.languageString)
                             }
                         }
+                        .onChange(of: selectedLanguage){ languageSettings.language = selectedLanguage }
                     }
-
-                    Section(header: Text("Application")) {
+                    
+                    Section(header: Text("Share")) {
                         Button(action: shareApplication) {
                             HStack {
                                 Image(systemName: "square.and.arrow.up")
@@ -51,11 +51,11 @@ struct SettingsView: View {
             .navigationTitle("Settings")
         }
     }
-
+    
     private func shareApplication() {
         guard let url = URL(string: "https://apps.apple.com/de/app/brain-gym-memory-blocks/id6739247775?l=en-GB") else { return }
         let activityController = UIActivityViewController(activityItems: [url], applicationActivities: nil)
-
+        
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let rootVC = windowScene.windows.first?.rootViewController {
             rootVC.present(activityController, animated: true, completion: nil)
@@ -69,13 +69,6 @@ struct SettingsView: View {
     }
 }
 
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
-    }
-}
-
-
 class AppThemeViewModel: ObservableObject {
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
 }
@@ -86,5 +79,12 @@ struct DarkModeViewModifier: ViewModifier {
     public func body(content: Content) -> some View {
         content
             .preferredColorScheme(appThemeViewModel.isDarkMode ? .dark : .light)
+    }
+}
+
+struct SettingsView_Previews: PreviewProvider {
+    static var previews: some View {
+        SettingsView()
+            .environment(LanguageSettings())
     }
 }

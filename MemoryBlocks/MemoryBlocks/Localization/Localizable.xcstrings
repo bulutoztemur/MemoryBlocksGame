@@ -1,0 +1,172 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
+    },
+    "1.1.2" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1.1.2"
+          }
+        }
+      }
+    },
+    "Appearance" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Görünüş"
+          }
+        }
+      }
+    },
+    "CONGRATULATIONS" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TEBRİKLER"
+          }
+        }
+      }
+    },
+    "Dark Mode" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koyu Mod"
+          }
+        }
+      }
+    },
+    "Do you want to go to main screen?" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ana sayfaya gitmek ister misiniz?"
+          }
+        }
+      }
+    },
+    "Language" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dil"
+          }
+        }
+      }
+    },
+    "Match: %lld/%lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Match: %1$lld/%2$lld"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eşleşme: %1$lld/%2$lld"
+          }
+        }
+      }
+    },
+    "Mismatch: %lld" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yanlış Eşleşme: %lld"
+          }
+        }
+      }
+    },
+    "NO" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HAYIR"
+          }
+        }
+      }
+    },
+    "Play" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oyna"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayarlar"
+          }
+        }
+      }
+    },
+    "Share" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paylaş"
+          }
+        }
+      }
+    },
+    "Share Application" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uygulamayı Paylaş"
+          }
+        }
+      }
+    },
+    "Version" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versiyon"
+          }
+        }
+      }
+    },
+    "YES" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EVET"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
