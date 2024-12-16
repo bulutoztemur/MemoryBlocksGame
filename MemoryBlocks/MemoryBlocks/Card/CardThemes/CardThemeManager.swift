@@ -10,7 +10,7 @@ import SwiftUI
 class CardThemeManager {
     static let shared = CardThemeManager()
             
-    var theme: CardThemes {
+    var theme: CardTheme {
         didSet {
             guard oldValue != self.theme else { return }
             if let encoded = try? JSONEncoder().encode(self.theme) {
@@ -21,10 +21,10 @@ class CardThemeManager {
     
     private init() {
         if let data = UserDefaults.standard.object(forKey: "themeType") as? Data,
-           let theme = try? JSONDecoder().decode(CardThemes.self, from: data) {
+           let theme = try? JSONDecoder().decode(CardTheme.self, from: data) {
             self.theme = theme
         } else {
-            self.theme = CardThemes.vehicle
+            self.theme = CardTheme.vehicle
         }
     }
     
@@ -34,22 +34,27 @@ class CardThemeManager {
             return Flag(rawValue: rawValue) ?? .azerbeijan
         case .vehicle:
             return Vehicle(rawValue: rawValue) ?? .bicycle
+        case .deck:
+            return Deck(rawValue: rawValue) ?? .deck_red_joker
         }
     }
     
-    func getThemeImage(cardType: CardThemes) -> Image {
+    func getThemeImage(cardType: CardTheme) -> Image {
         switch cardType {
         case .flag:
             return Image(.world)
         case .vehicle:
             return Image(.airplane)
+        case .deck:
+            return Image(.poker)
         }
     }
 }
 
-enum CardThemes: String, CaseIterable, Codable {
+enum CardTheme: String, CaseIterable, Codable {
     case vehicle
     case flag
+    case deck
     
     var title: String {
         switch self {
@@ -57,6 +62,8 @@ enum CardThemes: String, CaseIterable, Codable {
             return "Vehicles"
         case .flag:
             return "Flags"
+        case .deck:
+            return "Deck"
         }
     }
 }

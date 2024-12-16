@@ -12,7 +12,7 @@ struct SettingsView: View {
     @Environment(\.requestReview) private var requestReview
     @AppStorage("isDarkMode") private var isDarkMode = false
     @AppStorage("selectedLanguage") private var selectedLanguage: Language = Language.defaultValue
-    @AppStorage("selectedTheme") private var selectedTheme: CardThemes = CardThemeManager.shared.theme
+    @AppStorage("selectedTheme") private var selectedTheme: CardTheme = CardThemeManager.shared.theme
 
     var body: some View {
         NavigationStack {
@@ -20,7 +20,7 @@ struct SettingsView: View {
                 Form {
                     Section(header: Text("Theme")) {
                         Picker("Theme", selection: $selectedTheme) {
-                            ForEach(Array(CardThemes.allCases), id: \ .self) { theme in
+                            ForEach(Array(CardTheme.allCases), id: \ .self) { theme in
                                 HStack {
                                     CardThemeManager.shared.getThemeImage(cardType: theme)
                                     Text("   \(theme.title)")

@@ -27,50 +27,5 @@ enum Vehicle: Int, CaseIterable, Card {
     case taxi
     case train
     case truck
-    case zeppelin
-    
-    var image: Image {
-        return switch self {
-        case .ambulance:
-            Image(.ambulance)
-        case .bicycle:
-            Image(.bicycle)
-        case .bulldozer:
-            Image(.bulldozer)
-        case .bus:
-            Image(.bus)
-        case .car:
-            Image(.car)
-        case .drilling:
-            Image(.drilling)
-        case .excavator:
-            Image(.excavator)
-        case .helicopter:
-            Image(.helicopter)
-        case .jet:
-            Image(.jet)
-        case .motorcycle:
-            Image(.motorcycle)
-        case .plane:
-            Image(.plane)
-        case .police:
-            Image(.police)
-        case .scooter:
-            Image(.scooter)
-        case .rv:
-            Image(.rv)
-        case .rocket:
-            Image(.rocket)
-        case .tank:
-            Image(.tank)
-        case .taxi:
-            Image(.taxi)
-        case .train:
-            Image(.train)
-        case .truck:
-            Image(.truck)
-        case .zeppelin:
-            Image(.zeppelin)
-        }
-    }
+    case zeppelin    
 }

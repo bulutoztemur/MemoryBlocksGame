@@ -15,4 +15,7 @@ protocol Card {
 
 extension Card {
     var defaultImage: Image { Image(.brain) }
+    var image: Image {
+        return Image(ImageResource(name: String(describing: self), bundle: Bundle.main))
+    }
 }
