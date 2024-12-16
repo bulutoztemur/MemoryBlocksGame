@@ -15,7 +15,14 @@ struct ContentView: View {
     // Define a simple array of data
     let items = GameBoard.allCases
     
-    var numOfColums: Int { Int(ViewUtils.sharedInstance.widthWithoutSafeInsets / 180) }
+    var numOfColums: Int {
+        switch UIDevice.current.userInterfaceIdiom {
+        case .pad:
+            return Int(ViewUtils.sharedInstance.widthWithoutSafeInsets / 240)
+        default:
+            return 2
+        }
+    }
     
     var columns: [GridItem] {
         [GridItem](repeating: GridItem(.flexible()), count: numOfColums)

@@ -9,7 +9,7 @@ import SwiftUI
 
 class CardThemeManager {
     static let shared = CardThemeManager()
-            
+    
     var theme: CardTheme {
         didSet {
             guard oldValue != self.theme else { return }
@@ -47,6 +47,17 @@ class CardThemeManager {
             return Image(.airplane)
         case .deck:
             return Image(.poker)
+        }
+    }
+    
+    func getTotalPossibleDistintCard() -> Int {
+        switch theme {
+        case .vehicle:
+            Vehicle.allCases.count
+        case .flag:
+            Flag.allCases.count
+        case .deck:
+            Deck.allCases.count
         }
     }
 }
