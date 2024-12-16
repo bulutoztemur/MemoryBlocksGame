@@ -15,7 +15,7 @@ struct SettingsView: View {
     @AppStorage("selectedTheme") private var selectedTheme: CardThemes = CardThemeManager.shared.theme
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(content: {
                 Form {
                     Section(header: Text("Theme")) {
@@ -70,7 +70,7 @@ struct SettingsView: View {
                     }
                 }
             })
-            .navigationTitle(selectedLanguage.settingsNavigationTitle)
+            .navigationTitle("Settings")
         }
     }
     

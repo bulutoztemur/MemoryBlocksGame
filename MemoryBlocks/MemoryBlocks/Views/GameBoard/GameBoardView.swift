@@ -73,6 +73,15 @@ struct GameBoardView: View {
             }
         }
         .toolbar(.hidden, for: .tabBar)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(action: {
+                    viewModel.isSoundOn.toggle()
+                }, label: {
+                    Label("", systemImage: viewModel.isSoundOn ? "speaker.wave.2.fill" : "speaker.slash.fill")
+                })
+            }
+        }
     }
 }
 

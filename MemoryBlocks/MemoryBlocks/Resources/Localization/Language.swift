@@ -25,12 +25,5 @@ enum Language: String, CaseIterable, Codable {
             case .english: return "gb"
             case .turkish: return "tr"
         }
-    }
-    
-    var settingsNavigationTitle: String {
-        switch self {
-            case .english: return "Settings"
-            case .turkish: return "Ayarlar"
-        }
-    }
+    }    
 }

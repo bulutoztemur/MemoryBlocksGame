@@ -7,6 +7,7 @@
 
 import Foundation
 import AVFoundation
+import SwiftUI
 
 extension GameBoardView {
     @Observable
@@ -27,6 +28,12 @@ extension GameBoardView {
         var currentMatch: Int = 0
         var mismatch: Int = 0
         
+        var isSoundOn = true {
+            didSet {
+                UserDefaults.standard.setValue(isSoundOn, forKey: "isSoundOn")
+            }
+        }
+        
         init(gameBoard: GameBoard) {
             self.gameBoard = gameBoard
             self.maxMatch = gameBoard.column * gameBoard.row / 2
@@ -41,11 +48,13 @@ extension GameBoardView {
             }
             
             cardViews.shuffle()
+            
+            self.isSoundOn = UserDefaults.standard.bool(forKey: "isSoundOn")
         }
         
         func checkCardOrder(_ index: Int) {
             if firstCardIndex == nil {
-                setupAudioPlayer(soundFile: "cardflip", fileExtension: "wav")
+                playSound(soundFile: "cardflip", fileExtension: "wav")
                 firstCardIndex = index
             } else if secondCardIndex == nil {
                 secondCardIndex = index
@@ -67,7 +76,7 @@ extension GameBoardView {
         private func cardsUnmatched() {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.mismatch += 1
-                self.setupAudioPlayer(soundFile: "mismatch", fileExtension: "mp3")
+                self.playSound(soundFile: "mismatch", fileExtension: "mp3")
                 self.flipOverUnmatchedCards()
                 self.reset()
             }
@@ -77,9 +86,9 @@ extension GameBoardView {
             currentMatch += 1
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 if self.checkFinished() {
-                    self.setupAudioPlayer(soundFile: "claphands", fileExtension: "mp3")
+                    self.playSound(soundFile: "claphands", fileExtension: "mp3")
                 } else {
-                    self.setupAudioPlayer(soundFile: "match", fileExtension: "wav")
+                    self.playSound(soundFile: "match", fileExtension: "wav")
                 }
             }
             cardViews[firstCardIndex!].reduceOpacity()
@@ -101,7 +110,8 @@ extension GameBoardView {
             currentMatch == maxMatch
         }
         
-        func setupAudioPlayer(soundFile: String, fileExtension: String) {
+        func playSound(soundFile: String, fileExtension: String) {
+            guard isSoundOn else { return }
             if let path = Bundle.main.path(forResource: soundFile, ofType: fileExtension) {
                 let url = URL(fileURLWithPath: path)
                 do {
