@@ -36,6 +36,8 @@ class CardThemeManager {
             return Vehicle(rawValue: rawValue) ?? .bicycle
         case .deck:
             return Deck(rawValue: rawValue) ?? .deck_red_joker
+        case .landmark:
+            return Landmarks(rawValue: rawValue) ?? .bosphorus
         }
     }
     
@@ -47,6 +49,8 @@ class CardThemeManager {
             return Image(.airplane)
         case .deck:
             return Image(.poker)
+        case .landmark:
+            return Image(.eiffeltower)
         }
     }
     
@@ -58,6 +62,8 @@ class CardThemeManager {
             Flag.allCases.count
         case .deck:
             Deck.allCases.count
+        case .landmark:
+            Landmarks.allCases.count
         }
     }
 }
@@ -66,6 +72,7 @@ enum CardTheme: String, CaseIterable, Codable {
     case vehicle
     case flag
     case deck
+    case landmark
     
     var title: String {
         switch self {
@@ -75,6 +82,8 @@ enum CardTheme: String, CaseIterable, Codable {
             return "Flags"
         case .deck:
             return "Deck"
+        case .landmark:
+            return "Landmarks"
         }
     }
 }
