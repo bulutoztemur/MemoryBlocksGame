@@ -1,30 +1,13 @@
 //
-//  CardItem.swift
+//  Vehicle.swift
 //  MemoryBlocks
 //
-//  Created by bulut.oztemur on 26.08.24.
+//  Created by bulut.oztemur on 15.12.24.
 //
 
 import SwiftUI
 
-class CardItem: Identifiable, Hashable {
-    var id: UUID = UUID()
-    var card: Card
-        
-    init(card: Card) {
-        self.card = card
-    }
-
-    static func == (lhs: CardItem, rhs: CardItem) -> Bool {
-        rhs.id == lhs.id
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-}
-
-enum Card: Int, CaseIterable {
+enum Vehicle: Int, CaseIterable, Card {
     case ambulance = 0
     case bicycle
     case bulldozer
@@ -89,9 +72,5 @@ enum Card: Int, CaseIterable {
         case .zeppelin:
             Image(.zeppelin)
         }
-    }
-    
-    var defaultImage: Image {
-        Image(.brain)
     }
 }
