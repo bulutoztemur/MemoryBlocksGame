@@ -12,11 +12,26 @@ struct SettingsView: View {
     @Environment(\.requestReview) private var requestReview
     @AppStorage("isDarkMode") private var isDarkMode = false
     @AppStorage("selectedLanguage") private var selectedLanguage: Language = Language.defaultValue
-    
+    @AppStorage("selectedTheme") private var selectedTheme: CardThemes = CardThemeManager.shared.theme
+
     var body: some View {
         NavigationView {
             VStack(content: {
                 Form {
+                    Section(header: Text("Theme")) {
+                        Picker("Theme", selection: $selectedTheme) {
+                            ForEach(Array(CardThemes.allCases), id: \ .self) { theme in
+                                HStack {
+                                    CardThemeManager.shared.getThemeImage(cardType: theme)
+                                    Text("   \(theme.title)")
+                                }
+                            }
+                        }
+                        .onChange(of: selectedTheme) { _, newTheme in
+                            CardThemeManager.shared.theme = newTheme
+                        }
+                    }
+
                     Section(header: Text("Appearance")) {
                         Toggle(isOn: $isDarkMode) {
                             Text("Dark Mode")

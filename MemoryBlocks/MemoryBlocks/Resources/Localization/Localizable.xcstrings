@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "   %@" : {
+
+    },
     "%@" : {
       "localizations" : {
         "tr" : {
@@ -156,6 +159,9 @@
           }
         }
       }
+    },
+    "Theme" : {
+
     },
     "Version" : {
       "localizations" : {

@@ -103,7 +103,6 @@
 				59B6E0AB2D0F8E6D00064500 /* Extensions */,
 				59B6E0A92D0F8E2900064500 /* Card */,
 				59B6E0A82D0F8E0900064500 /* Views */,
-				59B6E0A32D0F8DB900064500 /* CardThemes */,
 				59B6E09B2D0F502100064500 /* Resources */,
 				5992E0C22C76052E00A5EE3A /* Preview Content */,
 				5956AF442D0C358900A43F3C /* ViewUtils.swift */,
@@ -178,6 +177,7 @@
 		59B6E0A92D0F8E2900064500 /* Card */ = {
 			isa = PBXGroup;
 			children = (
+				59B6E0A32D0F8DB900064500 /* CardThemes */,
 				59742A412C7C98A900F93E3A /* CardItem.swift */,
 				59742A432C7CABDD00F93E3A /* CardView.swift */,
 				59B6E0A12D0F8D8600064500 /* Card.swift */,
