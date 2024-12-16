@@ -77,7 +77,12 @@ struct SettingsView: View {
     private func shareApplication() {
         guard let url = URL(string: "https://apps.apple.com/de/app/brain-gym-memory-blocks/id6739247775?l=en-GB") else { return }
         let activityController = UIActivityViewController(activityItems: [url], applicationActivities: nil)
-        
+
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            activityController.popoverPresentationController?.sourceView = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first
+            activityController.popoverPresentationController?.sourceRect = CGRect(x: UIScreen.main.bounds.width / 2.1, y: UIScreen.main.bounds.height / 2.3, width: 200, height: 200)
+        }
+
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let rootVC = windowScene.windows.first?.rootViewController {
             rootVC.present(activityController, animated: true, completion: nil)
