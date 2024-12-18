@@ -1,13 +1,13 @@
 //
-//  Landmarks.swift
+//  Landmark.swift
 //  MemoryBlocks
 //
 //  Created by bulut.oztemur on 16.12.24.
 //
 
-import Foundation
+import SwiftUI
 
-enum Landmarks: Int, CaseIterable, Card {
+enum Landmark: Int, CaseIterable, Card {
     case acropolis
     case bavyera
     case bigben
@@ -33,4 +33,8 @@ enum Landmarks: Int, CaseIterable, Card {
     case times
     case vatican
     case wall
+    
+    static var defaultCard: Landmark = .eiffel
+    static var themeImage: Image = Image(.eiffeltower)
+    static var themeTitle: LocalizedStringKey = LocalizedStringKey("Landmarks")
 }

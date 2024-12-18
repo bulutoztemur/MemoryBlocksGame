@@ -39,12 +39,12 @@ extension GameBoardView {
             self.maxMatch = gameBoard.column * gameBoard.row / 2
             
             let arraySize = gameBoard.column * gameBoard.row / 2
-            let allItemsIndex = Array(0..<CardThemeManager.shared.getTotalPossibleDistintCard()).shuffled()
+            let allItemsIndex = Array(0..<CardThemeManager.shared.theme.cardType.numOfCases).shuffled()
             let itemIndexesForBoard = allItemsIndex[0 ..< arraySize]
 
             for i in itemIndexesForBoard {
-                cardViews.append(CardView(cardItem: CardItem(card: CardThemeManager.shared.getCard(rawValue: i))))
-                cardViews.append(CardView(cardItem: CardItem(card: CardThemeManager.shared.getCard(rawValue: i))))
+                cardViews.append(CardView(cardItem: CardItem(card: CardThemeManager.shared.theme.cardType.getCard(rawValue: i))))
+                cardViews.append(CardView(cardItem: CardItem(card: CardThemeManager.shared.theme.cardType.getCard(rawValue: i))))
             }
             
             cardViews.shuffle()

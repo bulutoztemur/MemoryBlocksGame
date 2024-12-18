@@ -27,5 +27,9 @@ enum Vehicle: Int, CaseIterable, Card {
     case taxi
     case train
     case truck
-    case zeppelin    
+    case zeppelin   
+    
+    static var defaultCard: Vehicle = .ambulance
+    static var themeImage: Image = Image(.airplane)        
+    static var themeTitle: LocalizedStringKey = LocalizedStringKey("Vehicles")
 }

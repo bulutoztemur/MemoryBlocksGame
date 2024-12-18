@@ -56,7 +56,6 @@
       }
     },
     "Deck" : {
-      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -87,7 +86,6 @@
       }
     },
     "Flags" : {
-      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -111,7 +109,6 @@
       "extractionState" : "manual"
     },
     "Landmarks" : {
-      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -228,7 +225,6 @@
       }
     },
     "Vehicles" : {
-      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {

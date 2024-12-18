@@ -35,7 +35,7 @@
 		59B6E0A52D0F8DC400064500 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B6E0A42D0F8DC400064500 /* Vehicle.swift */; };
 		59B6E0A72D0F8DCE00064500 /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B6E0A62D0F8DCE00064500 /* Flag.swift */; };
 		59B6E0AF2D107CFB00064500 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B6E0AE2D107CFB00064500 /* Deck.swift */; };
-		59B6E0B12D10DAEB00064500 /* Landmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B6E0B02D10DAEB00064500 /* Landmarks.swift */; };
+		59B6E0B12D10DAEB00064500 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B6E0B02D10DAEB00064500 /* Landmark.swift */; };
 		59FA08BE2D0589E30034FBD9 /* (null) in Sources */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
@@ -70,7 +70,7 @@
 		59B6E0A42D0F8DC400064500 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		59B6E0A62D0F8DCE00064500 /* Flag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flag.swift; sourceTree = "<group>"; };
 		59B6E0AE2D107CFB00064500 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
-		59B6E0B02D10DAEB00064500 /* Landmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmarks.swift; sourceTree = "<group>"; };
+		59B6E0B02D10DAEB00064500 /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +163,7 @@
 				59B6E0A42D0F8DC400064500 /* Vehicle.swift */,
 				59B6E0A62D0F8DCE00064500 /* Flag.swift */,
 				59B6E0AE2D107CFB00064500 /* Deck.swift */,
-				59B6E0B02D10DAEB00064500 /* Landmarks.swift */,
+				59B6E0B02D10DAEB00064500 /* Landmark.swift */,
 			);
 			path = CardThemes;
 			sourceTree = "<group>";
@@ -300,7 +300,7 @@
 				59B135162D0CCD0600287B07 /* MainView.swift in Sources */,
 				59B6E0A02D0F8D1C00064500 /* CardThemeManager.swift in Sources */,
 				59B6E0AF2D107CFB00064500 /* Deck.swift in Sources */,
-				59B6E0B12D10DAEB00064500 /* Landmarks.swift in Sources */,
+				59B6E0B12D10DAEB00064500 /* Landmark.swift in Sources */,
 				59B6E0872D0E4B2300064500 /* Language.swift in Sources */,
 				5992E0CB2C761E8A00A5EE3A /* GameBoardView.swift in Sources */,
 				59B6E0892D0E515A00064500 /* LanguageViewModifier.swift in Sources */,

@@ -29,5 +29,9 @@ enum Flag: Int, CaseIterable, Card {
     case switzerland
     case turkey
     case uk
-    case us    
+    case us 
+    
+    static var defaultCard: Flag = .turkey
+    static var themeImage: Image = Image(.world)
+    static var themeTitle: LocalizedStringKey = LocalizedStringKey("Flags")
 }

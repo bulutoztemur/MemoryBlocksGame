@@ -18,7 +18,7 @@ class CardThemeManager {
             }
         }
     }
-    
+        
     private init() {
         if let data = UserDefaults.standard.object(forKey: "themeType") as? Data,
            let theme = try? JSONDecoder().decode(CardTheme.self, from: data) {
@@ -27,65 +27,26 @@ class CardThemeManager {
             self.theme = CardTheme.vehicle
         }
     }
-    
-    func getCard(rawValue: Int) -> Card {
-        switch theme {
-        case .flag:
-            return Flag(rawValue: rawValue) ?? .azerbeijan
-        case .vehicle:
-            return Vehicle(rawValue: rawValue) ?? .bicycle
-        case .deck:
-            return Deck(rawValue: rawValue) ?? .deck_red_joker
-        case .landmark:
-            return Landmarks(rawValue: rawValue) ?? .bosphorus
-        }
-    }
-    
-    func getThemeImage(cardType: CardTheme) -> Image {
-        switch cardType {
-        case .flag:
-            return Image(.world)
-        case .vehicle:
-            return Image(.airplane)
-        case .deck:
-            return Image(.poker)
-        case .landmark:
-            return Image(.eiffeltower)
-        }
-    }
-    
-    func getTotalPossibleDistintCard() -> Int {
-        switch theme {
-        case .vehicle:
-            Vehicle.allCases.count
-        case .flag:
-            Flag.allCases.count
-        case .deck:
-            Deck.allCases.count
-        case .landmark:
-            Landmarks.allCases.count
-        }
-    }
 }
 
-enum CardTheme: String, CaseIterable, Codable {
+enum CardTheme: CaseIterable, Codable {
     case vehicle
     case flag
     case deck
     case landmark
-
-    var localizedTitle: LocalizedStringKey { LocalizedStringKey(title) }
     
-    var title: String {
+    var cardType: Card.Type {
         switch self {
         case .vehicle:
-            return "Vehicles"
+            return Vehicle.self
         case .flag:
-            return "Flags"
+            return Flag.self
         case .deck:
-            return "Deck"
+            return Deck.self
         case .landmark:
-            return "Landmarks"
+            return Landmark.self
         }
     }
 }
+
+

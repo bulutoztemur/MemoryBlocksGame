@@ -12,8 +12,8 @@ struct SettingsView: View {
     @Environment(\.requestReview) private var requestReview
     @AppStorage("isDarkMode") private var isDarkMode = false
     @AppStorage("selectedLanguage") private var selectedLanguage: Language = Language.defaultValue
-    @AppStorage("selectedTheme") private var selectedTheme: CardTheme = CardThemeManager.shared.theme
-
+    @State private var selectedTheme: CardTheme = CardThemeManager.shared.theme
+    
     var body: some View {
         NavigationStack {
             VStack(content: {
@@ -25,8 +25,8 @@ struct SettingsView: View {
                                     selectedTheme = theme
                                 } label: {
                                     HStack {
-                                        Text(theme.localizedTitle)
-                                        CardThemeManager.shared.getThemeImage(cardType: theme)
+                                        Text(theme.cardType.themeTitle)
+                                        theme.cardType.themeImage
                                     }
                                 }
                             }
@@ -34,14 +34,17 @@ struct SettingsView: View {
                             HStack {
                                 Text("Theme")
                                 Spacer()
-                                CardThemeManager.shared.getThemeImage(cardType: selectedTheme)
+                                selectedTheme.cardType.themeImage
                                     .padding(.trailing, 8)
-                                Text(selectedTheme.localizedTitle)
+                                Text(selectedTheme.cardType.themeTitle)
                                 Image(systemName: "chevron.up.chevron.down")
                             }
                         }
+                        .onChange(of: selectedTheme) { _, newTheme in
+                            CardThemeManager.shared.theme = newTheme
+                        }
                     }
-
+                    
                     Section(header: Text("Appearance")) {
                         Toggle(isOn: $isDarkMode) {
                             Text("Dark Mode")
@@ -87,12 +90,12 @@ struct SettingsView: View {
     private func shareApplication() {
         guard let url = URL(string: "https://apps.apple.com/de/app/brain-gym-memory-blocks/id6739247775?l=en-GB") else { return }
         let activityController = UIActivityViewController(activityItems: [url], applicationActivities: nil)
-
+        
         if UIDevice.current.userInterfaceIdiom == .pad {
             activityController.popoverPresentationController?.sourceView = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first
             activityController.popoverPresentationController?.sourceRect = CGRect(x: UIScreen.main.bounds.width / 2.1, y: UIScreen.main.bounds.height / 2.3, width: 200, height: 200)
         }
-
+        
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let rootVC = windowScene.windows.first?.rootViewController {
             rootVC.present(activityController, animated: true, completion: nil)
@@ -114,7 +117,7 @@ struct SettingsView_Previews: PreviewProvider {
 
 struct DarkModeViewModifier: ViewModifier {
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
-
+    
     public func body(content: Content) -> some View {
         content
             .preferredColorScheme(isDarkMode ? .dark : .light)

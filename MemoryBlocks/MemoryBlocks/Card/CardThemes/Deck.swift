@@ -63,4 +63,8 @@ enum Deck: Int, CaseIterable, Card {
     case deck_queen_of_hearts2
     case deck_queen_of_spades2
     case deck_red_joker    
+    
+    static var defaultCard: Deck = .deck_red_joker
+    static var themeImage: Image = Image(.poker)
+    static var themeTitle: LocalizedStringKey = LocalizedStringKey("Deck")
 }
