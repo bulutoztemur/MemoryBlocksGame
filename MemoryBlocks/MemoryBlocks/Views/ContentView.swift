@@ -51,6 +51,7 @@ struct ContentView: View {
                 }
             }
             .padding()
+            .navigationTitle("Game Board Sizes")
         }
     }
     

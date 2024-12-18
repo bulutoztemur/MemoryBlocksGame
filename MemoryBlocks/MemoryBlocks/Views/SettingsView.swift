@@ -19,16 +19,26 @@ struct SettingsView: View {
             VStack(content: {
                 Form {
                     Section(header: Text("Theme")) {
-                        Picker("Theme", selection: $selectedTheme) {
-                            ForEach(Array(CardTheme.allCases), id: \ .self) { theme in
-                                HStack {
-                                    CardThemeManager.shared.getThemeImage(cardType: theme)
-                                    Text("   \(theme.title)")
+                        Menu {
+                            ForEach(Array(CardTheme.allCases), id: \.self) { theme in
+                                Button {
+                                    selectedTheme = theme
+                                } label: {
+                                    HStack {
+                                        Text(theme.localizedTitle)
+                                        CardThemeManager.shared.getThemeImage(cardType: theme)
+                                    }
                                 }
                             }
-                        }
-                        .onChange(of: selectedTheme) { _, newTheme in
-                            CardThemeManager.shared.theme = newTheme
+                        } label: {
+                            HStack {
+                                Text("Theme")
+                                Spacer()
+                                CardThemeManager.shared.getThemeImage(cardType: selectedTheme)
+                                    .padding(.trailing, 8)
+                                Text(selectedTheme.localizedTitle)
+                                Image(systemName: "chevron.up.chevron.down")
+                            }
                         }
                     }
 

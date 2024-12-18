@@ -4,9 +4,6 @@
     "" : {
 
     },
-    "   %@" : {
-
-    },
     "%@" : {
       "localizations" : {
         "tr" : {
@@ -23,6 +20,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Görünüş"
+          }
+        }
+      }
+    },
+    "Back" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geri"
           }
         }
       }
@@ -47,6 +55,17 @@
         }
       }
     },
+    "Deck" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İskambil Kağıtları"
+          }
+        }
+      }
+    },
     "Do you want to go to main screen?" : {
       "localizations" : {
         "tr" : {
@@ -63,6 +82,41 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Geri Bildirim"
+          }
+        }
+      }
+    },
+    "Flags" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ülke Bayrakları"
+          }
+        }
+      }
+    },
+    "Game Board Sizes" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oyun Alanı Boyutları"
+          }
+        }
+      }
+    },
+    "Key" : {
+      "extractionState" : "manual"
+    },
+    "Landmarks" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sembol Yapılar"
           }
         }
       }
@@ -164,7 +218,25 @@
       }
     },
     "Theme" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tema"
+          }
+        }
+      }
+    },
+    "Vehicles" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Araçlar"
+          }
+        }
+      }
     },
     "Version" : {
       "localizations" : {

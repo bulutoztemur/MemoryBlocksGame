@@ -73,6 +73,8 @@ enum CardTheme: String, CaseIterable, Codable {
     case flag
     case deck
     case landmark
+
+    var localizedTitle: LocalizedStringKey { LocalizedStringKey(title) }
     
     var title: String {
         switch self {
