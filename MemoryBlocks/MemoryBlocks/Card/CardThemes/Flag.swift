@@ -23,6 +23,7 @@ enum Flag: Int, CaseIterable, Card {
     case japan
     case mexico
     case pakistan
+    case russia
     case southafrica
     case spain
     case sweden
