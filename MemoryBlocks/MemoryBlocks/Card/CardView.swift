@@ -34,8 +34,8 @@ struct CardView: View {
             .padding(padding)
             .cornerRadius(8.0)
             .overlay(
-                RoundedRectangle(cornerRadius: 8, style: .continuous)
-                    .stroke(.blue, lineWidth: 4)
+                RoundedRectangle(cornerRadius: 8.0, style: .continuous)
+                    .stroke(.blue, lineWidth: 4.0)
             )
             .opacity(config.opacity)
             .simultaneousGesture(TapGesture().onEnded {
