@@ -29,7 +29,7 @@ extension Card {
         return Image(ImageResource(name: String(describing: self), bundle: Bundle.main))
     }
     
-    var padding: CGFloat { 4.0 }
+    var padding: CGFloat { 8.0 }
 }
 
 extension Card where Self: RawRepresentable, Self.RawValue == Int {
