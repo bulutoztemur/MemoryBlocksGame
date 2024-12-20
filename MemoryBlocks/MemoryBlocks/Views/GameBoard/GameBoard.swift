@@ -52,7 +52,7 @@ enum GameBoard: CaseIterable {
     
     var cardSize: CGFloat {
         let width: CGFloat = UIScreen.main.bounds.width - ViewUtils.sharedInstance.safeInsetsLeft - ViewUtils.sharedInstance.safeInsetsRight
-        return (width / CGFloat(ViewUtils.sharedInstance.isOrientationPortrait ? column : row)) - 20.0
+        return (width / CGFloat(ViewUtils.sharedInstance.isOrientationPortrait ? column : row)) - 12.0
     }
     
     var displayName: String {

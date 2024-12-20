@@ -26,17 +26,15 @@ struct CardView: View {
     var body: some View {
         
         let image = config.open ? cardItem.card.image : cardItem.card.defaultImage
-        let padding = config.open ? 8.0 : 0.0
+        let padding = config.open ? cardItem.card.padding : 0.0
+        
         image
             .resizable()
             .scaleEffect(x: -1, y: 1)
             .padding(padding)
-            .cornerRadius(16)
-            .background(
-                RoundedRectangle(cornerRadius: 16, style: .continuous).fill(.clear)
-            )
+            .cornerRadius(8.0)
             .overlay(
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                RoundedRectangle(cornerRadius: 8, style: .continuous)
                     .stroke(.blue, lineWidth: 4)
             )
             .opacity(config.opacity)

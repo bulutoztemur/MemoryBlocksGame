@@ -37,4 +37,6 @@ enum Landmark: Int, CaseIterable, Card {
     static var defaultCard: Landmark = .eiffel
     static var themeImage: Image = Image(.eiffeltower)
     static var themeTitle: LocalizedStringKey = LocalizedStringKey("Landmarks")
+    
+    var padding: CGFloat { 0.0 }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 protocol Card {
     var defaultImage: Image { get }
     var image: Image { get }
+    var padding: CGFloat { get }
     var rawValue: Int { get }
     
     static var defaultCard: Self { get }
@@ -27,6 +28,8 @@ extension Card {
     var image: Image {
         return Image(ImageResource(name: String(describing: self), bundle: Bundle.main))
     }
+    
+    var padding: CGFloat { 4.0 }
 }
 
 extension Card where Self: RawRepresentable, Self.RawValue == Int {
