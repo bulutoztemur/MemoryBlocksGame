@@ -16,12 +16,7 @@ struct ContentView: View {
     let items = GameBoard.allCases
     
     var numOfColums: Int {
-        switch UIDevice.current.userInterfaceIdiom {
-        case .pad:
-            return Int(ViewUtils.sharedInstance.widthWithoutSafeInsets / 240)
-        default:
-            return 2
-        }
+        ViewUtils.sharedInstance.widthWithoutSafeInsets > 450.0 ? 3 : 2
     }
     
     var columns: [GridItem] {
@@ -40,7 +35,9 @@ struct ContentView: View {
                                     .frame(width: menuItemSize(geometry: geometry), height: menuItemSize(geometry: geometry))
                                     .background(Color.blue)
                                     .foregroundColor(.white)
-                                    .font(.title)
+                                    .font(.system(size: 72))
+                                    .minimumScaleFactor(0.005)
+                                    .lineLimit(1)
                                     .cornerRadius(32.0)
                             }
                         }
