@@ -15,7 +15,14 @@
       }
     },
     "Animals" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hayvanlar"
+          }
+        }
+      }
     },
     "Appearance" : {
       "localizations" : {
@@ -218,7 +225,14 @@
       }
     },
     "Sports" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spor Dalları"
+          }
+        }
+      }
     },
     "Theme" : {
       "localizations" : {
