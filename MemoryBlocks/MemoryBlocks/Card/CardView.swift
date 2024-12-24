@@ -26,7 +26,7 @@ struct CardView: View {
     var body: some View {
         
         let image = config.open ? cardItem.card.image : cardItem.card.defaultImage
-        let padding = config.open ? cardItem.card.padding : 0.0
+        let padding: EdgeInsets = config.open ? cardItem.card.padding : EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         
         image
             .resizable()

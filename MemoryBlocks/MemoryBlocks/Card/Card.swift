@@ -10,7 +10,7 @@ import SwiftUI
 protocol Card {
     var defaultImage: Image { get }
     var image: Image { get }
-    var padding: CGFloat { get }
+    var padding: EdgeInsets { get }
     var rawValue: Int { get }
     
     static var defaultCard: Self { get }
@@ -29,7 +29,7 @@ extension Card {
         return Image(ImageResource(name: String(describing: self), bundle: Bundle.main))
     }
     
-    var padding: CGFloat { 8.0 }
+    var padding: EdgeInsets { EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8) }
 }
 
 extension Card where Self: RawRepresentable, Self.RawValue == Int {

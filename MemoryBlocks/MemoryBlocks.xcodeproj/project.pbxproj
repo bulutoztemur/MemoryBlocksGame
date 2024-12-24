@@ -22,6 +22,8 @@
 		5995B20A2D19679800E31446 /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = 5995B2092D19679800E31446 /* OneSignalExtension */; };
 		5995B20C2D19679800E31446 /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 5995B20B2D19679800E31446 /* OneSignalFramework */; };
 		5995B20E2D19679800E31446 /* OneSignalInAppMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 5995B20D2D19679800E31446 /* OneSignalInAppMessages */; };
+		5995B2472D1ACFC100E31446 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5995B2462D1ACFBF00E31446 /* Sport.swift */; };
+		5995B2492D1AEFB800E31446 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5995B2482D1AEFB600E31446 /* Animal.swift */; };
 		59B135162D0CCD0600287B07 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B135152D0CCD0600287B07 /* MainView.swift */; };
 		59B135182D0CCD2D00287B07 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B135172D0CCD2D00287B07 /* SettingsView.swift */; };
 		59B6E0842D0DCD4200064500 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 59B6E0832D0DCD4200064500 /* Localizable.xcstrings */; };
@@ -82,6 +84,8 @@
 		5992E0CA2C761E8A00A5EE3A /* GameBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
 		5995B1F52D1965E500E31446 /* MemoryBlocks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MemoryBlocks.entitlements; sourceTree = "<group>"; };
 		5995B1FA2D1966FA00E31446 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5995B2462D1ACFBF00E31446 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
+		5995B2482D1AEFB600E31446 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		59B135152D0CCD0600287B07 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		59B135172D0CCD2D00287B07 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		59B6E0802D0D94EB00064500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -216,6 +220,8 @@
 		59B6E0A32D0F8DB900064500 /* CardThemes */ = {
 			isa = PBXGroup;
 			children = (
+				5995B2482D1AEFB600E31446 /* Animal.swift */,
+				5995B2462D1ACFBF00E31446 /* Sport.swift */,
 				59B6E09F2D0F8D1C00064500 /* CardThemeManager.swift */,
 				59B6E0A42D0F8DC400064500 /* Vehicle.swift */,
 				59B6E0A62D0F8DCE00064500 /* Flag.swift */,
@@ -395,10 +401,12 @@
 				5956AF452D0C358900A43F3C /* ViewUtils.swift in Sources */,
 				59B135162D0CCD0600287B07 /* MainView.swift in Sources */,
 				59B6E0A02D0F8D1C00064500 /* CardThemeManager.swift in Sources */,
+				5995B2472D1ACFC100E31446 /* Sport.swift in Sources */,
 				59B6E0AF2D107CFB00064500 /* Deck.swift in Sources */,
 				59B6E0B12D10DAEB00064500 /* Landmark.swift in Sources */,
 				59B6E0872D0E4B2300064500 /* Language.swift in Sources */,
 				5992E0CB2C761E8A00A5EE3A /* GameBoardView.swift in Sources */,
+				5995B2492D1AEFB800E31446 /* Animal.swift in Sources */,
 				59B6E0892D0E515A00064500 /* LanguageViewModifier.swift in Sources */,
 				59B135182D0CCD2D00287B07 /* SettingsView.swift in Sources */,
 				59742A442C7CABDD00F93E3A /* CardView.swift in Sources */,
@@ -566,7 +574,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bulutoztemur.MemoryBlocks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -597,7 +605,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bulutoztemur.MemoryBlocks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
