@@ -14,6 +14,16 @@
         }
       }
     },
+    "Animals" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hayvanlar"
+          }
+        }
+      }
+    },
     "Appearance" : {
       "localizations" : {
         "tr" : {
@@ -210,6 +220,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Uygulamayı Paylaş"
+          }
+        }
+      }
+    },
+    "Sports" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spor Dalları"
           }
         }
       }

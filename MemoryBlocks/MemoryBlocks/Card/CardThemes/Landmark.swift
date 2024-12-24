@@ -38,5 +38,4 @@ enum Landmark: Int, CaseIterable, Card {
     static var themeImage: Image = Image(.eiffeltower)
     static var themeTitle: LocalizedStringKey = LocalizedStringKey("Landmarks")
     
-    var padding: CGFloat { 0.0 }
-}
+    var padding: EdgeInsets { EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0) }}

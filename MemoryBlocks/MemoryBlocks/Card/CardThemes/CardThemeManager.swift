@@ -34,6 +34,8 @@ enum CardTheme: CaseIterable, Codable {
     case flag
     case deck
     case landmark
+    case sport
+    case animal
     
     var cardType: Card.Type {
         switch self {
@@ -45,6 +47,10 @@ enum CardTheme: CaseIterable, Codable {
             return Deck.self
         case .landmark:
             return Landmark.self
+        case .sport:
+            return Sport.self
+        case .animal:
+            return Animal.self
         }
     }
 }

@@ -67,4 +67,6 @@ enum Deck: Int, CaseIterable, Card {
     static var defaultCard: Deck = .deck_red_joker
     static var themeImage: Image = Image(.poker)
     static var themeTitle: LocalizedStringKey = LocalizedStringKey("Deck")
+    
+    var padding: EdgeInsets { EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 8) }
 }
