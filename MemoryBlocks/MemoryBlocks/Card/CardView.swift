@@ -38,9 +38,6 @@ struct CardView: View {
                     .stroke(.blue, lineWidth: 4.0)
             )
             .opacity(config.opacity)
-            .simultaneousGesture(TapGesture().onEnded {
-                flipCard()
-            })
             .rotation3DEffect(
                 Angle(degrees: config.angle),
                 axis: (x: 0, y: 1, z: 0)
