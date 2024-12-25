@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.requestReview) private var requestReview
-    @AppStorage("isDarkMode") private var isDarkMode = false
+    @AppStorage("isDarkMode") private var isDarkMode = true
     @AppStorage("selectedLanguage") private var selectedLanguage: Language = Language.defaultValue
     @State private var selectedTheme: CardTheme = CardThemeManager.shared.theme
     
@@ -116,7 +116,7 @@ struct SettingsView_Previews: PreviewProvider {
 }
 
 struct DarkModeViewModifier: ViewModifier {
-    @AppStorage("isDarkMode") var isDarkMode: Bool = false
+    @AppStorage("isDarkMode") var isDarkMode: Bool = true
     
     public func body(content: Content) -> some View {
         content

@@ -11,7 +11,7 @@ struct GameBoardView: View {
     @Environment(\.dismiss) private var dismiss
     
     var gameBoard: GameBoard
-        
+    
     var columns: [GridItem] {
         [GridItem](repeating: GridItem(.flexible()), count: ViewUtils.sharedInstance.isOrientationPortrait ? gameBoard.column : gameBoard.row)
     }
@@ -19,7 +19,8 @@ struct GameBoardView: View {
     @State private var viewModel: ViewModel
     @State private var timerActive: Bool = false
     @State private var isGameFinished: Bool = false
-                    
+    @State private var enable: Bool = true
+    
     init(gameBoard: GameBoard) {
         self.gameBoard = gameBoard
         self.viewModel = ViewModel(gameBoard: gameBoard)
@@ -33,18 +34,24 @@ struct GameBoardView: View {
                     ForEach(0 ..< viewModel.cardViews.count, id: \.self) { index in
                         viewModel.cardViews[index]
                             .frame(width: gameBoard.cardSize, height: gameBoard.cardSize)
-                            .simultaneousGesture(TapGesture().onEnded {
-                                timerActive = true
-                                viewModel.checkCardOrder(index)
-                                viewModel.checkMatch()
-                                isGameFinished = viewModel.checkFinished()
-                                timerActive = !isGameFinished
-                            })
+                            .onTapGesture {
+                                guard enable else { return }
+                                enable = false
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+                                    timerActive = true
+                                    viewModel.cardViews[index].flipCard()
+                                    viewModel.checkCardOrder(index)
+                                    viewModel.checkMatch()
+                                    isGameFinished = viewModel.checkFinished()
+                                    timerActive = !isGameFinished
+                                    enable = true
+                                }
+                            }
                     }
                 }
                 .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
-                .allowsHitTesting(viewModel.gameBoardEnable)
-
+                .allowsHitTesting(viewModel.gameBoardEnable && enable)
+                
                 HStack(alignment: .top, spacing: 16) {
                     TimeCounterView(timerActive: $timerActive)
                     Spacer()
